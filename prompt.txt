@@ -1,0 +1,560 @@
+Tu es un développeur web full-stack expert et designer UI/UX.
+Crée un site web complet, prêt pour la production, pour "ARREDA",
+fabricant de meubles sur mesure basé à Conakry, Guinée, Afrique de l'Ouest.
+
+════════════════════════════════════════════
+ STACK TECHNIQUE
+════════════════════════════════════════════
+
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- Framer Motion (animations)
+- next/image (images optimisées)
+- shadcn/ui (composants)
+
+════════════════════════════════════════════
+ IDENTITÉ VISUELLE — EXTRAITE DU LOGO OFFICIEL
+════════════════════════════════════════════
+
+Le logo ARREDA est composé de :
+- Un grand "A" rouge vif stylisé avec une courbe dynamique
+- Un fond noir sur le logo lui-même
+- Un ruban tricolore (vert / blanc / rouge — couleurs du drapeau guinéen)
+- Une énergie visuelle moderne, audacieuse, africaine
+
+⚠️ THÈME GÉNÉRAL DU SITE : FOND CLAIR (jamais noir sur les pages)
+Le logo est sombre, mais le site est lumineux et propre.
+Seul le footer utilise un fond sombre.
+
+────────────────────────────────────────────
+ PALETTE DE COULEURS (stricte)
+────────────────────────────────────────────
+
+  Fond principal :      #FFFFFF  (blanc pur — fond de toutes les pages)
+  Fond alterné :        #F5F5F5  (gris très clair — sections alternées)
+  Rouge marque :        #E8151B  (rouge du logo — CTA, accents, soulignements)
+  Rouge foncé :         #B01015  (hover des boutons rouges)
+  Texte principal :     #1A1A1A  (quasi-noir — titres)
+  Texte secondaire :    #555555  (gris moyen — corps de texte)
+  Texte atténué :       #999999  (gris clair — légendes, placeholders)
+  Vert Guinée :         #009A44  (drapeau — accent secondaire, jamais dominant)
+  Cards premium :       #1C1C1C  (fond sombre UNIQUEMENT pour footer)
+  WhatsApp :            #25D366
+
+────────────────────────────────────────────
+ RÈGLES D'UTILISATION DES COULEURS
+────────────────────────────────────────────
+
+- Fond par défaut : #FFFFFF (blanc — jamais noir sur les pages)
+- Alternance de sections : blanc (#FFF) ↔ gris clair (#F5F5F5)
+- Navbar : fond blanc + border-bottom 2px rouge #E8151B
+- Hero : fond blanc ou #F5F5F5 avec grande image côté droit
+- Titres de section : #1A1A1A + soulignement rouge de 60px
+- Boutons primaires : fond #E8151B, texte blanc, hover #B01015
+- Boutons secondaires : bordure rouge, texte rouge, fond blanc
+- Accents décoratifs : rouge #E8151B et vert guinéen #009A44
+- Barre de stats : fond rouge #E8151B, texte blanc
+- Footer : seule section autorisée en fond sombre (#1A1A1A)
+- Cards : fond blanc + ombre légère + bordure top rouge 4px au hover
+- Section CTA finale : fond rouge #E8151B, boutons blancs
+- JAMAIS de fond noir ni sombre sur les pages ou sections de contenu
+
+────────────────────────────────────────────
+ TYPOGRAPHIE
+────────────────────────────────────────────
+
+- Display :  'Bebas Neue'   — titres hero, grands titres, chiffres
+- Heading :  'Montserrat'   — 700/800, sous-titres, labels
+- Body :     'Inter'        — 400/500, texte courant
+(Importer depuis Google Fonts)
+
+────────────────────────────────────────────
+ LOGO
+────────────────────────────────────────────
+
+- Fichier : /public/logo/arreda-logo.png
+- Copier le fichier logo uploadé dans ce chemin
+- Utilisé dans la Navbar (gauche) et le Footer
+- Hauteur dans la navbar : 48px
+- Ne jamais étirer, recolorer ni modifier le logo
+- Sur fond blanc : ajouter un conteneur très légèrement gris si nécessaire
+  pour que le fond noir du logo ne disparaisse pas
+
+────────────────────────────────────────────
+ ÉLÉMENTS DÉCORATIFS (composants réutilisables)
+────────────────────────────────────────────
+
+Créer ces composants :
+
+<GuineaRibbon />
+- SVG : 3 bandes fines (vert #009A44 / blanc / rouge #E8151B)
+- Utilisé : en haut du footer, section partenaires, hero
+- Subtil — largeur totale, hauteur 6px
+
+<RedAccentLine />
+- Ligne rouge 60px × 3px (#E8151B)
+- Placée sous chaque titre de section
+
+<CornerMark />
+- Petit crochet en L rouge sur les coins des cards premium
+  (coin haut-gauche et bas-droit)
+
+════════════════════════════════════════════
+ ARBORESCENCE DU SITE (8 pages)
+════════════════════════════════════════════
+
+1. /              — Accueil
+2. /about         — À propos
+3. /services      — Services
+4. /realisations  — Réalisations (Avant / Après)
+5. /atelier       — Atelier de Production
+6. /partenaires   — Partenaires Internationaux
+7. /devis         — Demande de devis
+8. /contact       — Contact
+
+════════════════════════════════════════════
+ SPÉCIFICATIONS PAGE PAR PAGE
+════════════════════════════════════════════
+
+────────────────────────────────────────────
+ 1. PAGE ACCUEIL (/)
+────────────────────────────────────────────
+
+SECTION HERO
+- Fond blanc ou #F5F5F5
+- Côté gauche :
+  · Label rouge : "CONAKRY, GUINÉE — DEPUIS 2016"
+  · Titre géant Bebas Neue (~96px, #1A1A1A) :
+    "MEUBLES SUR MESURE
+     FABRIQUÉS EN GUINÉE"
+  · Soulignement rouge sous "GUINÉE"
+  · Sous-titre (Inter 18px, #555) :
+    "ARREDA transforme vos espaces avec des créations en bois
+     fabriquées dans notre atelier à Conakry."
+  · 2 CTA :
+    [Voir nos réalisations] → /realisations (rouge rempli)
+    [Demander un devis]     → WhatsApp      (outlined rouge)
+  · Ruban tricolore guinéen décoratif (SVG subtil)
+- Côté droit :
+  · Grande image furniture avec cadre rouge décalé (offset)
+  · Badge flottant : "200+ projets réalisés"
+
+BARRE DE STATS
+- Fond rouge #E8151B, pleine largeur
+- 4 stats en ligne :
+  "200+" / Projets réalisés
+  "8 ans" / D'expérience
+  "500m²" / Atelier de production
+  "100%"  / Fabrication locale
+
+SECTION AVANT/APRÈS (teaser)
+- Fond #F5F5F5
+- Titre : "NOS TRANSFORMATIONS" + <RedAccentLine />
+- 3 cards avec slider interactif au hover
+- CTA : [Voir toutes les réalisations →]
+
+SECTION SERVICES
+- Fond blanc
+- Titre : "CE QUE NOUS FABRIQUONS"
+- 6 cards en grille 2×3
+- Chaque card : icône rouge SVG + titre + description courte
+- Au hover : bordure top rouge 4px
+
+SECTION POURQUOI ARREDA
+- Fond #F5F5F5
+- 3 piliers avec grands numéros (01, 02, 03) en rouge,
+  Bebas Neue ~120px, opacité 0.12, en arrière-plan
+- Texte par-dessus en #1A1A1A :
+  01 — Fabrication locale (pas un revendeur)
+  02 — Sur mesure total (dimensions personnalisées)
+  03 — Livraison & installation incluses
+- Photo d'artisan travaillant le bois à droite
+
+TÉMOIGNAGES
+- Fond blanc
+- 3 cards avec guillemets rouges géants
+- Prénoms guinéens : Mamadou, Fatoumata, Ibrahim...
+
+CTA FINALE
+- Fond rouge #E8151B, pleine largeur
+- Texte blanc Bebas Neue :
+  "PRÊT À TRANSFORMER VOTRE ESPACE ?"
+- Bouton WhatsApp blanc + bouton devis outlined blanc
+
+────────────────────────────────────────────
+ 2. PAGE À PROPOS (/about)
+────────────────────────────────────────────
+
+- Hero : fond blanc, titre Bebas Neue, fil d'Ariane
+- Histoire : texte à gauche, image à droite (layout splitté)
+- Mission / Vision : 2 cards avec bordure rouge
+- Chronologie verticale : jalons 2016 → aujourd'hui
+- Section équipe : cards avec photos placeholder
+- Section "Fierté guinéenne" avec ruban tricolore décoratif
+
+────────────────────────────────────────────
+ 3. PAGE SERVICES (/services)
+────────────────────────────────────────────
+
+Cards détaillées (icône + titre + description + CTA) :
+- Mobilier résidentiel (salons, chambres, cuisines)
+- Mobilier de bureau et open space
+- Aménagement commercial (hôtels, restaurants, boutiques)
+- Rénovation & transformation de meubles existants
+- Conseil en décoration intérieure
+- Livraison & installation sur mesure
+
+Chaque card :
+- Fond blanc + ombre légère (box-shadow subtile)
+- Icône SVG rouge
+- Bordure top rouge 4px au hover
+- CTA "Demander un devis" → ouvre WhatsApp
+
+────────────────────────────────────────────
+ 4. PAGE RÉALISATIONS (/realisations)
+────────────────────────────────────────────
+
+COMPOSANT BeforeAfterSlider (components/BeforeAfterSlider.tsx)
+- Props : beforeImage, afterImage, title, category, duration, location
+- Séparateur vertical draggable avec poignée circulaire
+- Poignée : cercle blanc + flèches ◀ ▶ en rouge
+- Label "AVANT" (badge rouge, haut gauche)
+- Label "APRÈS" (badge blanc, haut droit)
+- Support souris + tactile (touch)
+- Transitions CSS fluides
+
+SYSTÈME DE FILTRES
+- Barre de filtres en pills arrondies :
+  [Tous] [Salon] [Cuisine] [Bureau] [Chambre] [Commercial]
+  [Particulier] [Entreprise]
+- Filtre actif : pill rouge remplie
+- Animation in/out avec Framer Motion layout
+
+12 PROJETS (noms réalistes Conakry)
+"Villa Kipé — Salon moderne"
+"Bureau Kaloum — Open space"
+"Restaurant Dixinn — Salle principale"
+"Résidence Ratoma — Suite parentale"
+"Hôtel Almamya — Réception"
+"Appartement Minière — Cuisine équipée"
+"Villa Nongo — Chambre principale"
+"Bureau Hamdallaye — Salle de réunion"
+"Café Coleah — Espace client"
+"Résidence Matam — Bibliothèque"
+"Hôtel Camayenne — Suite junior"
+"Bureau Lansanaya — Réception"
+
+────────────────────────────────────────────
+ 5. PAGE ATELIER (/atelier)
+────────────────────────────────────────────
+
+CHRONOLOGIE DU PROCESSUS
+Scroll horizontal sur mobile, vertical sur desktop :
+1. 🌲 Sélection du bois
+2. 📐 Conception & plans
+3. ✂️  Découpe de précision
+4. 🔨 Assemblage artisanal
+5. 🎨 Finitions & vernis
+6. ✅ Contrôle qualité
+7. 🚚 Livraison & installation
+
+Chaque étape :
+- Numéro en rouge (Bebas Neue)
+- Titre Montserrat 700
+- Description courte Inter
+
+GALERIE PHOTOS
+- Grille masonry (3 colonnes desktop, 2 tablette, 1 mobile)
+- Images Unsplash de menuiserie / atelier bois
+
+SECTION ÉQUIPEMENTS
+- Titre : "NOS MACHINES & ÉQUIPEMENTS"
+- Cards : CNC, scie à table, ponceuse, fraiseuse...
+
+BANNIÈRE MESSAGE CLÉ
+- Fond rouge #E8151B
+- Texte blanc Bebas Neue (grand) :
+  "ARREDA FABRIQUE SES MEUBLES — NOUS NE SOMMES PAS REVENDEURS"
+
+────────────────────────────────────────────
+ 6. PAGE PARTENAIRES (/partenaires)
+────────────────────────────────────────────
+
+SÉLECTEUR DE LANGUE
+- Toggle FR | EN bien visible en haut de page
+- Tout le contenu bascule en React state (pas de lib i18n)
+- Préférence sauvegardée en localStorage
+
+PITCH INVESTISSEUR
+- Design propre et professionnel (style one-pager)
+- Résumé entreprise avec métriques clés
+- Section opportunité de marché Afrique de l'Ouest
+
+3 CARDS DE BESOINS (bilingues)
+🌲 Fourniture de bois / Wood Supply
+⚙️  Machines & Équipements / Machinery & Equipment
+💰 Investissement & Partenariat / Investment & Partnership
+- Chaque card : icône rouge + titre bilingue + description + CTA contact
+
+AVANTAGES (4 items)
+- Main d'œuvre locale qualifiée
+- Marché en forte croissance
+- Position stratégique en Afrique de l'Ouest
+- Environnement des affaires favorable
+
+TÉLÉCHARGEMENT COMPANY PROFILE
+- Bouton : [📄 Télécharger notre Company Profile / Download]
+- Déclenche window.print() sur une page formatée
+  OU lien vers /public/documents/arreda-company-profile.pdf
+
+FORMULAIRE CONTACT INTERNATIONAL
+Champs : Nom/Name* | Société/Company* | Pays/Country* (liste déroulante)
+         Intérêt/Interest (select) | Message*
+Envoi → lien WhatsApp avec données pré-remplies
+
+────────────────────────────────────────────
+ 7. PAGE DEVIS (/devis)
+────────────────────────────────────────────
+
+Formulaire multi-étapes (3 étapes)
+Indicateur de progression en rouge
+
+ÉTAPE 1 — Votre projet
+- Type : [Résidentiel | Commercial | Bureau | Hôtellerie]
+- Meuble : [Salon | Cuisine | Chambre | Bureau | Autre]
+- Budget : [< 5M GNF | 5–15M GNF | 15–50M GNF | > 50M GNF]
+
+ÉTAPE 2 — Détails
+- Dimensions approximatives (L × l × H)
+- Description libre (textarea)
+- Photos de référence (input file, accept image/*)
+- Délai souhaité : [Urgent <2 sem | Normal 1 mois | Flexible]
+
+ÉTAPE 3 — Coordonnées
+- Nom complet*
+- Téléphone WhatsApp* (préfixe +224 affiché)
+- Email (optionnel)
+- Quartier / Commune (Conakry)
+
+À la soumission :
+- Construire le message WhatsApp avec toutes les données du formulaire
+- Ouvrir : https://wa.me/+224XXXXXXXXX?text=MESSAGE_ENCODÉ
+- Afficher un état de succès avec coche verte
+
+────────────────────────────────────────────
+ 8. PAGE CONTACT (/contact)
+────────────────────────────────────────────
+
+- Layout splitté : infos à gauche | formulaire + carte à droite
+- Intégration Google Maps : Conakry, Guinée (iframe placeholder)
+- Cards d'information :
+  📍 Adresse : [Quartier], Conakry, Guinée
+  📞 Téléphone : +224 XXX XXX XXX
+  💬 WhatsApp : +224 XXX XXX XXX
+  ✉️  Email : contact@arreda.gn
+  🕐 Horaires : Lun–Sam, 8h–18h
+- Icônes réseaux : Facebook + Instagram + WhatsApp
+- Formulaire simple + bouton rouge
+
+════════════════════════════════════════════
+ COMPOSANTS GLOBAUX
+════════════════════════════════════════════
+
+────────────────────────────────────────────
+ NAVBAR (components/Navbar.tsx)
+────────────────────────────────────────────
+
+- Fond : #FFFFFF
+- Border-bottom : 2px solid #E8151B
+- Logo : /public/logo/arreda-logo.png (h-12, côté gauche)
+- Liens : #1A1A1A, uppercase, Montserrat 600
+  → au hover : rouge #E8151B + soulignement
+  → lien actif : rouge
+- Bouton "Demander un devis" : rouge rempli (toujours visible, droite)
+- Sticky au scroll avec backdrop-blur
+- Mobile : hamburger → menu overlay plein écran blanc,
+  liens en rouge, animation slide
+
+────────────────────────────────────────────
+ BOUTON WHATSAPP FLOTTANT (components/WhatsAppButton.tsx)
+────────────────────────────────────────────
+
+⚠️ CRITIQUE — présent sur TOUTES les pages, TOUS les appareils
+
+- Position : fixe, bas-droite (bottom-6, right-6), z-index 9999
+- Cercle 60px, fond #25D366
+- Icône SVG WhatsApp blanche
+- Animation : anneau qui s'élargit et disparaît toutes les 3s (pulse)
+- Au hover : scale 1.1 + tooltip "Devis rapide via WhatsApp"
+- Lien :
+  https://wa.me/+224XXXXXXXXX?text=Bonjour%20ARREDA%2C%20je%20souhaite%20un%20devis%20pour%20un%20meuble%20sur%20mesure.
+- Au clic : gtag('event', 'whatsapp_click', { page: window.location.pathname })
+
+────────────────────────────────────────────
+ FOOTER (components/Footer.tsx)
+────────────────────────────────────────────
+
+- Fond : #1A1A1A (seule section sombre autorisée)
+- Tout en haut : <GuineaRibbon /> (bandes vert/blanc/rouge, 6px)
+- Logo ARREDA + tagline en blanc
+- 4 colonnes : Navigation | Services | Contact | Réseaux sociaux
+- Ligne de séparation rouge au-dessus du copyright
+- Copyright : "© 2024 ARREDA — Tous droits réservés | Fait avec ❤️ à Conakry, Guinée"
+
+════════════════════════════════════════════
+ ANIMATIONS (Framer Motion)
+════════════════════════════════════════════
+
+- Hero titre : apparition mot par mot (stagger 0.1s)
+- Stats : compteur qui monte de 0 au scroll (IntersectionObserver)
+- Titres de section : slide up + fade in
+- Cards : révélation en cascade au scroll
+- Transitions de page : fade 0.3s
+- Bouton WhatsApp : pulse toutes les 3s
+- Before/After : drag fluide CSS
+
+════════════════════════════════════════════
+ SEO & PERFORMANCE
+════════════════════════════════════════════
+
+Metadata pour chaque page (metadata.ts) :
+- Accueil : "ARREDA | Meubles sur mesure à Conakry, Guinée"
+- Réalisations : "Nos réalisations | Transformation d'intérieurs — ARREDA"
+- Partenaires : "Partenaires Internationaux | ARREDA Guinée"
+
+Balises Open Graph sur toutes les pages
+
+JSON-LD LocalBusiness :
+{
+  "@type": "LocalBusiness",
+  "name": "ARREDA",
+  "description": "Fabricant de meubles sur mesure à Conakry, Guinée",
+  "address": { "addressLocality": "Conakry", "addressCountry": "GN" },
+  "telephone": "+224XXXXXXXXX"
+}
+
+Mots-clés SEO :
+"meubles sur mesure Conakry", "menuiserie Guinée",
+"aménagement intérieur Conakry", "fabricant meubles Guinée",
+"custom furniture Guinea", "interior design Conakry"
+
+Performance :
+- next/image partout (WebP + lazy loading)
+- priority sur les images above-the-fold
+- Génération automatique du sitemap
+
+════════════════════════════════════════════
+ ANALYTICS
+════════════════════════════════════════════
+
+- Google Analytics 4 : G-XXXXXXXXXX (placeholder)
+- Google Tag Manager : conteneur GTM prêt
+- Événements personnalisés :
+  whatsapp_click    → { page, button_location }
+  devis_submitted   → { budget_range, project_type }
+  pdf_downloaded    → {}
+  before_after_used → { project_name }
+
+════════════════════════════════════════════
+ IMAGES PLACEHOLDER
+════════════════════════════════════════════
+
+Utiliser des URLs Unsplash réelles :
+- Hero :      https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=80
+- Atelier :   https://images.unsplash.com/photo-1504148455328-c376907d081c?w=1200&q=80
+- Salon :     https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80
+- Bois :      https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80
+- Cuisine :   https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80
+- Bureau :    https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80
+
+Tous les alt en français
+
+════════════════════════════════════════════
+ STRUCTURE DES FICHIERS
+════════════════════════════════════════════
+
+app/
+  layout.tsx           ← Layout racine (Navbar + Footer + WhatsApp + Analytics)
+  page.tsx             ← Accueil
+  about/page.tsx
+  services/page.tsx
+  realisations/page.tsx
+  atelier/page.tsx
+  partenaires/page.tsx
+  devis/page.tsx
+  contact/page.tsx
+  globals.css          ← Variables CSS + styles de base
+
+components/
+  Navbar.tsx
+  Footer.tsx
+  WhatsAppButton.tsx
+  BeforeAfterSlider.tsx
+  ProjectCard.tsx
+  GuineaRibbon.tsx
+  RedAccentLine.tsx
+  CornerMark.tsx
+  StatsCounter.tsx
+
+lib/
+  data.ts              ← Projets, services, témoignages (données placeholder)
+  analytics.ts         ← Helpers gtag
+  whatsapp.ts          ← Constructeur d'URL WhatsApp avec paramètres
+
+public/
+  logo/arreda-logo.png        ← LOGO OFFICIEL (fichier uploadé)
+  documents/arreda-company-profile.pdf
+
+tailwind.config.ts     ← Tokens de marque complets
+
+════════════════════════════════════════════
+ CONFIGURATION TAILWIND (tokens de marque)
+════════════════════════════════════════════
+
+colors:
+  brand:
+    red:      '#E8151B'   ← rouge logo ARREDA
+    deepred:  '#B01015'   ← hover
+    black:    '#1A1A1A'   ← texte principal
+    white:    '#FFFFFF'   ← fond principal
+    offwhite: '#F5F5F5'   ← sections alternées
+    gray:     '#555555'   ← texte secondaire
+    muted:    '#999999'   ← texte atténué
+    green:    '#009A44'   ← drapeau guinéen (accent)
+    wa:       '#25D366'   ← WhatsApp
+
+fontFamily:
+  display: ['Bebas Neue', 'sans-serif']
+  heading: ['Montserrat', 'sans-serif']
+  body:    ['Inter', 'sans-serif']
+
+════════════════════════════════════════════
+ RÈGLES FINALES IMPÉRATIVES
+════════════════════════════════════════════
+
+1. ✅ Fond de toutes les pages : BLANC (#FFFFFF) — jamais noir
+2. ✅ Seule exception sombre autorisée : le Footer (#1A1A1A)
+3. ✅ Le bouton WhatsApp est visible sur chaque page, chaque appareil
+4. ✅ Tous les CTA de contact ouvrent WhatsApp (pas des formulaires email)
+5. ✅ Le mot "ARREDA" s'écrit toujours en Bebas Neue ou Montserrat Bold, MAJUSCULES
+6. ✅ Le ruban tricolore guinéen apparaît sur : Hero, Footer, page Partenaires
+7. ✅ Design mobile-first — tester chaque composant à 375px
+8. ✅ Jamais de violet, or ou beige — rester fidèle aux couleurs du logo
+9. ✅ next/image avec priority sur toutes les images above-the-fold
+10. ✅ Copier le logo uploadé dans /public/logo/arreda-logo.png
+
+════════════════════════════════════════════
+ ORDRE DE GÉNÉRATION
+════════════════════════════════════════════
+
+Commencer par :
+tailwind.config.ts
+→ globals.css
+→ components/Navbar.tsx
+→ components/Footer.tsx
+→ components/WhatsAppButton.tsx
+→ components/BeforeAfterSlider.tsx
+→ app/layout.tsx
+→ app/page.tsx (Accueil)
+→ puis toutes les autres pages dans l'ordre
