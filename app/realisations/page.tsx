@@ -3,10 +3,10 @@ import { RealisationsClient } from "@/components/realisations/RealisationsClient
 
 export const metadata: Metadata = {
   title: "Nos réalisations",
-  description: "Transformation d’intérieurs — avant / après à Conakry — ARREDA.",
+  description: "Galerie photo des réalisations ARREDA.",
   openGraph: {
     title: "Nos réalisations | ARREDA",
-    description: "Avant / après : salons, cuisines, bureaux et hôtels à Conakry.",
+    description: "Parcourez les projets livrés par ARREDA en images.",
   },
 };
 

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { RedAccentLine } from "@/components/RedAccentLine";
 import { GuineaRibbon } from "@/components/GuineaRibbon";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { unsplash } from "@/lib/data";
+
 
 export const metadata: Metadata = {
   title: "À propos",
@@ -48,8 +48,8 @@ export default function AboutPage() {
         </div>
         <div className="overflow-hidden rounded-xl shadow-card ring-1 ring-black/5">
           <Image
-            src={unsplash.atelier}
-            alt="Atelier de menuiserie ARREDA"
+            src="/images/about-notre-histoire.webp"
+            alt="Équipe ARREDA à l'atelier"
             width={900}
             height={700}
             className="h-full w-full object-cover"

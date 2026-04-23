@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { RedAccentLine } from "@/components/RedAccentLine";
-import { pillars, unsplash } from "@/lib/data";
+import { pillars } from "@/lib/data";
 
 export function PillarsSection() {
   return (
@@ -52,8 +52,8 @@ export function PillarsSection() {
             className="relative overflow-hidden rounded-xl shadow-card ring-1 ring-black/5"
           >
             <Image
-              src={unsplash.bois}
-              alt="Artisan travaillant le bois à l’atelier"
+              src="/Ouvrier/ouvrier-pourquoi.webp"
+              alt="Ouvrier ARREDA en pleine mesure sur machine de coupe"
               width={900}
               height={1100}
               className="h-full w-full object-cover"

@@ -1,34 +1,17 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Montserrat, Inter } from "next/font/google";
+import "@fontsource/bebas-neue/400.css";
+import "@fontsource/montserrat/600.css";
+import "@fontsource/montserrat/700.css";
+import "@fontsource/montserrat/800.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
 import "./globals.css";
-import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Analytics } from "@/components/Analytics";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/constants";
-
-const bebas = Bebas_Neue({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
-  variable: "--font-heading",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-body",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -63,15 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="fr"
-      className={cn(
-        bebas.variable,
-        montserrat.variable,
-        inter.variable,
-        "font-body"
-      )}
-    >
+    <html lang="fr" className="font-body">
       <body className="min-h-screen bg-brand-white text-brand-black antialiased">
         <JsonLd />
         <Analytics />

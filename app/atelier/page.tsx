@@ -1,21 +1,13 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { RedAccentLine } from "@/components/RedAccentLine";
-import { equipment, processSteps, unsplash } from "@/lib/data";
+import { LightboxGallery } from "@/components/gallery/LightboxGallery";
+import { equipment, processSteps } from "@/lib/data";
+import { ouvrierImages } from "@/lib/media";
 
 export const metadata: Metadata = {
   title: "Atelier de production",
-  description: "Processus, machines et galerie de l’atelier ARREDA à Conakry.",
+  description: "Processus, machines et chantier en images chez ARREDA.",
 };
-
-const gallery = [
-  unsplash.atelier,
-  unsplash.bois,
-  unsplash.cuisine,
-  unsplash.bureau,
-  unsplash.salon,
-  unsplash.hero,
-];
 
 export default function AtelierPage() {
   return (
@@ -40,7 +32,9 @@ export default function AtelierPage() {
                 key={s.title}
                 className="min-w-[240px] snap-start rounded-xl border border-black/5 bg-white p-5 shadow-card md:min-w-0 md:flex md:gap-6"
               >
-                <span className="font-display text-4xl text-brand-red">{String(i + 1).padStart(2, "0")}</span>
+                <span className="font-display text-4xl text-brand-red">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 <div>
                   <p className="text-2xl" aria-hidden>
                     {s.emoji}
@@ -56,21 +50,12 @@ export default function AtelierPage() {
 
       <section className="px-4 py-16">
         <div className="mx-auto max-w-7xl">
-          <h2 className="font-display text-4xl uppercase text-brand-black">Galerie atelier</h2>
+          <h2 className="font-display text-4xl uppercase text-brand-black">Nos ouvriers en chantier</h2>
           <RedAccentLine />
-          <div className="mt-8 columns-1 gap-4 sm:columns-2 lg:columns-3">
-            {gallery.map((src, i) => (
-              <div key={i} className="mb-4 break-inside-avoid overflow-hidden rounded-xl shadow-card ring-1 ring-black/5">
-                <Image
-                  src={src}
-                  alt={`Atelier ARREDA — cliché ${i + 1}`}
-                  width={800}
-                  height={600 + (i % 3) * 120}
-                  className="h-auto w-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
+          <p className="mt-4 max-w-2xl font-body text-brand-gray">
+            Photos terrain de nos équipes pendant l&apos;exécution des projets.
+          </p>
+          <LightboxGallery images={ouvrierImages} altPrefix="Ouvrier ARREDA sur chantier" />
         </div>
       </section>
 
