@@ -22,6 +22,9 @@ import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { SITE_URL } from "@/lib/constants";
 import { trackEvent } from "@/lib/analytics";
 import { unsplash } from "@/lib/data";
+import { useMessages } from "@/components/i18n/MessagesProvider";
+import { useLocale } from "@/lib/i18n/useLocale";
+import { localizedPath } from "@/lib/i18n/href";
 
 const COMMUNES = [
   "Kaloum",
@@ -178,6 +181,8 @@ export function DevisExperience() {
   const [emailTouched, setEmailTouched] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
   const [previews, setPreviews] = useState<string[]>([]);
+  const messages = useMessages();
+  const locale = useLocale();
 
   useEffect(() => {
     const urls = form.photos.map((file) => URL.createObjectURL(file));
@@ -249,32 +254,30 @@ export function DevisExperience() {
           <Check className="h-12 w-12" strokeWidth={3} />
         </div>
         <h1 className="text-center font-display text-4xl uppercase tracking-tight text-brand-black sm:text-5xl">
-          Demande envoyée !
+          {messages.devis.successTitle}
         </h1>
-        <p className="mt-4 max-w-md text-center font-body text-brand-gray">
-          Votre message a été préparé et WhatsApp va s’ouvrir.
-        </p>
+        <p className="mt-4 max-w-md text-center font-body text-brand-gray">{messages.devis.successLead}</p>
         <p className="mt-2 max-w-md text-center font-body text-sm text-brand-muted">
-          L’équipe ARREDA vous répondra sous 24h.
+          {messages.devis.successReply}
         </p>
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">
           <Link
-            href="/realisations"
+            href={localizedPath(locale, "/realisations")}
             className={cn(
               buttonVariants({ size: "lg" }),
-              "border-0 bg-brand-red text-white hover:bg-brand-deepred"
+              "border-0 bg-brand-black text-white hover:bg-black/85"
             )}
           >
-            Voir nos réalisations
+            {messages.devis.seeRealisations}
           </Link>
           <Link
-            href="/"
+            href={localizedPath(locale, "/")}
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
-              "border-2 border-brand-red font-heading font-semibold uppercase text-brand-red"
+              "border-2 border-brand-black font-heading font-semibold uppercase text-brand-black"
             )}
           >
-            Retour à l’accueil
+            {messages.devis.backHome}
           </Link>
         </div>
       </div>
@@ -290,29 +293,29 @@ export function DevisExperience() {
         <aside className="relative flex w-full flex-col bg-[#1A1A1A] text-white lg:w-[40%] lg:min-w-[320px] lg:max-w-xl">
           {/* Mobile : bandeau compact */}
           <div className="border-b border-white/10 px-4 py-3 lg:hidden">
-            <p className="font-heading text-[10px] font-bold uppercase tracking-[0.2em] text-brand-red">
+            <p className="font-heading text-[10px] font-bold uppercase tracking-[0.2em] text-brand-black">
               Étape {step} / 3
             </p>
             <p className="font-heading text-sm font-bold text-white">{activeLeftLabel}</p>
           </div>
 
           <div className="hidden flex-1 flex-col px-8 py-10 lg:flex lg:px-10 lg:py-12">
-            <div className="rounded-md bg-white/5 p-2">
-              <Image
-                src="/logo/arreda-logo.webp"
-                alt="ARREDA"
-                width={140}
-                height={56}
-                className="h-11 w-auto brightness-0 invert"
-              />
-            </div>
+            <Image
+              src="/logo/ARREDA.png"
+              alt="ARREDA"
+              width={849}
+              height={280}
+              priority
+              className="h-auto w-[min(100%,17.5rem)] max-w-full bg-transparent brightness-0 invert"
+              sizes="(max-width: 1024px) 100vw, 280px"
+            />
 
-            <h2 className="mt-10 font-display text-[48px] uppercase leading-[0.95] tracking-tight text-white">
+            <h2 className="mt-8 font-display text-[48px] uppercase leading-[0.95] tracking-tight text-white">
               Votre projet,
               <br />
               notre expertise.
             </h2>
-            <span className="mt-4 inline-block h-[3px] w-[60px] rounded-full bg-brand-red" />
+            <span className="mt-4 inline-block h-[3px] w-[60px] rounded-full bg-brand-black" />
 
             <nav className="relative mt-12 flex flex-col gap-0" aria-label="Progression du formulaire">
               {STEPS_LEFT.map((s, i) => {
@@ -329,17 +332,17 @@ export function DevisExperience() {
                     )}
                     <div className="relative z-10 flex shrink-0 flex-col items-center">
                       {completed ? (
-                        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-red text-xs text-white">
+                        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-black text-xs text-white">
                           <Check className="h-3.5 w-3.5" strokeWidth={3} />
                         </span>
                       ) : active ? (
-                        <span className="h-6 w-6 rounded-full bg-brand-red ring-4 ring-brand-red/30" />
+                        <span className="h-6 w-6 rounded-full bg-brand-black ring-4 ring-black/25" />
                       ) : (
                         <span className="h-6 w-6 rounded-full border-2 border-white/35 bg-transparent" />
                       )}
                     </div>
                     <div>
-                      <p className="font-heading text-xs font-bold text-brand-red">{s.num}</p>
+                      <p className="font-heading text-xs font-bold text-brand-black">{s.num}</p>
                       <p
                         className={cn(
                           "font-heading text-sm font-bold tracking-wide",
@@ -366,7 +369,7 @@ export function DevisExperience() {
                   key={t}
                   className="flex items-start gap-3 rounded-lg bg-[#2a2a2a] px-4 py-3 text-sm text-white"
                 >
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-red" strokeWidth={3} />
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-black" strokeWidth={3} />
                   <span>{t}</span>
                 </div>
               ))}
@@ -379,13 +382,13 @@ export function DevisExperience() {
           <div className="border-b border-black/5 px-4 py-4 sm:px-8 sm:py-6 lg:px-12">
             <div className="h-1 w-full overflow-hidden rounded-full bg-brand-offwhite">
               <motion.div
-                className="h-full bg-brand-red"
+                className="h-full bg-brand-black"
                 initial={false}
                 animate={{ width: `${progress}%` }}
                 transition={{ duration: 0.45, ease: "easeInOut" }}
               />
             </div>
-            <p className="mt-3 font-heading text-xs font-bold uppercase tracking-[0.25em] text-brand-red">
+            <p className="mt-3 font-heading text-xs font-bold uppercase tracking-[0.25em] text-brand-black">
               Étape {step} / 3
             </p>
           </div>
@@ -404,9 +407,9 @@ export function DevisExperience() {
                   <h3 className="font-display text-4xl uppercase leading-none text-brand-black">
                     {STEP_TITLES[0]}
                   </h3>
-                  <span className="mt-3 inline-block h-[3px] w-[60px] rounded-full bg-brand-red" />
+                  <span className="mt-3 inline-block h-[3px] w-[60px] rounded-full bg-brand-black" />
 
-                  <p className="mt-4 rounded-lg border border-brand-red/20 bg-brand-red/5 px-4 py-3 font-body text-sm leading-relaxed text-brand-gray">
+                  <p className="mt-4 rounded-lg border border-brand-black/20 bg-black/5 px-4 py-3 font-body text-sm leading-relaxed text-brand-gray">
                     Ces choix sont <strong className="text-brand-black">facultatifs</strong> : si
                     vous n’êtes pas sûr, passez à l’étape suivante — nous préciserons tout ensemble
                     sur WhatsApp.
@@ -426,12 +429,12 @@ export function DevisExperience() {
                           className={cn(
                             "relative rounded-xl border-[1.5px] p-4 text-left transition-all",
                             sel
-                              ? "border-2 border-brand-red bg-[#FEF0F0] text-brand-black shadow-sm"
-                              : "border-[#ddd] bg-white text-[#555] hover:border-brand-red/50"
+                              ? "border-2 border-brand-black bg-[#FEF0F0] text-brand-black shadow-sm"
+                              : "border-[#ddd] bg-white text-[#555] hover:border-brand-black/50"
                           )}
                         >
                           {sel && (
-                            <span className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-brand-red text-[10px] text-white">
+                            <span className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-brand-black text-[10px] text-white">
                               ✓
                             </span>
                           )}
@@ -456,7 +459,7 @@ export function DevisExperience() {
                           className={cn(
                             "rounded-full px-4 py-2 font-heading text-xs font-bold uppercase tracking-wide transition-colors",
                             sel
-                              ? "bg-brand-red text-white"
+                              ? "bg-brand-black text-white"
                               : "bg-brand-offwhite text-[#555] hover:bg-brand-muted/20"
                           )}
                         >
@@ -480,7 +483,7 @@ export function DevisExperience() {
                           className={cn(
                             "rounded-full px-3 py-2 font-body text-xs font-semibold transition-colors sm:text-sm",
                             sel
-                              ? "bg-brand-red text-white"
+                              ? "bg-brand-black text-white"
                               : "bg-brand-offwhite text-[#555] hover:bg-brand-muted/20"
                           )}
                         >
@@ -495,7 +498,7 @@ export function DevisExperience() {
                     onClick={goNext}
                     className={cn(
                       buttonVariants({ size: "lg" }),
-                      "mt-10 flex w-full items-center justify-center gap-2 border-0 bg-brand-red font-heading font-bold uppercase text-white hover:bg-brand-deepred"
+                      "mt-10 flex w-full items-center justify-center gap-2 border-0 bg-brand-black font-heading font-bold uppercase text-white hover:bg-black/85"
                     )}
                   >
                     Continuer
@@ -516,9 +519,9 @@ export function DevisExperience() {
                   <h3 className="font-display text-4xl uppercase leading-none text-brand-black">
                     {STEP_TITLES[1]}
                   </h3>
-                  <span className="mt-3 inline-block h-[3px] w-[60px] rounded-full bg-brand-red" />
+                  <span className="mt-3 inline-block h-[3px] w-[60px] rounded-full bg-brand-black" />
 
-                  <p className="mt-4 rounded-lg border border-brand-red/20 bg-brand-red/5 px-4 py-3 font-body text-sm leading-relaxed text-brand-gray">
+                  <p className="mt-4 rounded-lg border border-brand-black/20 bg-black/5 px-4 py-3 font-body text-sm leading-relaxed text-brand-gray">
                     Dimensions, texte, photos et délai sont{" "}
                     <strong className="text-brand-black">tous facultatifs</strong>. Indiquez seulement
                     ce dont vous disposez — nous compléterons le reste avec vous.
@@ -541,7 +544,7 @@ export function DevisExperience() {
                               [field]: e.target.value.replace(/[^\d.,]/g, ""),
                             }))
                           }
-                          className="h-11 border-[#ddd] text-center focus-visible:border-brand-red"
+                          className="h-11 border-[#ddd] text-center focus-visible:border-brand-black"
                         />
                         <p className="mt-1 text-center text-xs text-brand-muted">cm</p>
                       </div>
@@ -553,7 +556,7 @@ export function DevisExperience() {
                   </p>
                   <div className="relative mt-2">
                     <Textarea
-                      className="min-h-[120px] resize-y border-[#ddd] pb-8 focus-visible:border-brand-red"
+                      className="min-h-[120px] resize-y border-[#ddd] pb-8 focus-visible:border-brand-black"
                       placeholder="Décrivez votre projet : style souhaité, couleur du bois, utilisation principale, contraintes particulières..."
                       value={form.description}
                       maxLength={DESC_MAX}
@@ -595,9 +598,9 @@ export function DevisExperience() {
                       if (e.dataTransfer.files?.length) addPhotos(e.dataTransfer.files);
                     }}
                     onClick={() => fileRef.current?.click()}
-                    className="mt-2 cursor-pointer rounded-xl border-2 border-dashed border-brand-red/60 bg-brand-offwhite/30 px-4 py-8 text-center transition-colors hover:bg-brand-offwhite/60"
+                    className="mt-2 cursor-pointer rounded-xl border-2 border-dashed border-brand-black/60 bg-brand-offwhite/30 px-4 py-8 text-center transition-colors hover:bg-brand-offwhite/60"
                   >
-                    <Paperclip className="mx-auto mb-2 h-8 w-8 text-brand-red" />
+                    <Paperclip className="mx-auto mb-2 h-8 w-8 text-brand-black" />
                     <p className="font-body text-sm font-medium text-brand-black">
                       Glissez vos photos ici ou cliquez pour choisir
                     </p>
@@ -606,7 +609,7 @@ export function DevisExperience() {
                     </p>
                   </div>
                   {photoError && (
-                    <p className="mt-2 text-sm font-medium text-brand-red">{photoError}</p>
+                    <p className="mt-2 text-sm font-medium text-red-600">{photoError}</p>
                   )}
 
                   {form.photos.length > 0 ? (
@@ -625,7 +628,7 @@ export function DevisExperience() {
                               e.stopPropagation();
                               removePhoto(i);
                             }}
-                            className="absolute right-0.5 top-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-black/70 text-white hover:bg-brand-red"
+                            className="absolute right-0.5 top-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-black/70 text-white hover:bg-neutral-600"
                             aria-label="Supprimer la photo"
                           >
                             <X className="h-3.5 w-3.5" />
@@ -664,8 +667,8 @@ export function DevisExperience() {
                           className={cn(
                             "rounded-xl border-[1.5px] p-4 text-left transition-all",
                             sel
-                              ? "border-2 border-brand-red bg-[#FEF0F0] shadow-sm"
-                              : "border-[#ddd] bg-white hover:border-brand-red/40"
+                              ? "border-2 border-brand-black bg-[#FEF0F0] shadow-sm"
+                              : "border-[#ddd] bg-white hover:border-brand-black/40"
                           )}
                         >
                           <span className="text-xl">{d.emoji}</span>
@@ -695,7 +698,7 @@ export function DevisExperience() {
                       onClick={goNext}
                       className={cn(
                         buttonVariants({ size: "lg" }),
-                        "flex-[2] border-0 bg-brand-red font-heading font-bold uppercase text-white hover:bg-brand-deepred"
+                        "flex-[2] border-0 bg-brand-black font-heading font-bold uppercase text-white hover:bg-black/85"
                       )}
                     >
                       Continuer
@@ -717,10 +720,10 @@ export function DevisExperience() {
                   <h3 className="font-display text-4xl uppercase leading-none text-brand-black">
                     {STEP_TITLES[2]}
                   </h3>
-                  <span className="mt-3 inline-block h-[3px] w-[60px] rounded-full bg-brand-red" />
+                  <span className="mt-3 inline-block h-[3px] w-[60px] rounded-full bg-brand-black" />
 
                   <div className="mt-8 rounded-xl border border-black/5 bg-brand-offwhite p-5 text-sm">
-                    <p className="font-heading text-xs font-bold uppercase tracking-wide text-brand-red">
+                    <p className="font-heading text-xs font-bold uppercase tracking-wide text-brand-black">
                       Récapitulatif
                     </p>
                     <ul className="mt-4 space-y-2 font-body text-brand-black">
@@ -768,7 +771,7 @@ export function DevisExperience() {
                         <button
                           type="button"
                           onClick={() => goToStep(2)}
-                          className="text-left text-xs font-bold uppercase text-brand-red underline sm:text-right"
+                          className="text-left text-xs font-bold uppercase text-brand-black underline sm:text-right"
                         >
                           Modifier
                         </button>
@@ -785,7 +788,7 @@ export function DevisExperience() {
                         id="nom"
                         value={form.nom}
                         onChange={(e) => setForm((prev) => ({ ...prev, nom: e.target.value }))}
-                        className="mt-1 h-11 border-[#ddd] focus-visible:border-brand-red"
+                        className="mt-1 h-11 border-[#ddd] focus-visible:border-brand-black"
                       />
                       {!form.nom.trim() && (
                         <p className="mt-1 text-xs text-brand-muted">Champ obligatoire</p>
@@ -796,7 +799,7 @@ export function DevisExperience() {
                       <Label htmlFor="tel" className="font-heading text-sm font-bold">
                         Téléphone WhatsApp *
                       </Label>
-                      <div className="mt-1 flex rounded-lg border border-[#ddd] focus-within:border-brand-red">
+                      <div className="mt-1 flex rounded-lg border border-[#ddd] focus-within:border-brand-black">
                         <span className="flex select-none items-center border-r border-[#ddd] bg-brand-offwhite px-3 font-mono text-sm text-brand-gray">
                           +224
                         </span>
@@ -817,7 +820,7 @@ export function DevisExperience() {
                         />
                       </div>
                       {phoneTouched && !phoneOk && (
-                        <p className="mt-1 text-sm text-brand-red">
+                        <p className="mt-1 text-sm text-red-600">
                           Numéro invalide — 9 chiffres après +224 (ex. 620 12 34 56)
                         </p>
                       )}
@@ -833,10 +836,10 @@ export function DevisExperience() {
                         value={form.email}
                         onBlur={() => setEmailTouched(true)}
                         onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
-                        className="mt-1 h-11 border-[#ddd] focus-visible:border-brand-red"
+                        className="mt-1 h-11 border-[#ddd] focus-visible:border-brand-black"
                       />
                       {emailTouched && form.email.trim() && !emailOk && (
-                        <p className="mt-1 text-sm text-brand-red">Format d’email invalide</p>
+                        <p className="mt-1 text-sm text-red-600">Format d’email invalide</p>
                       )}
                     </div>
 
@@ -856,7 +859,7 @@ export function DevisExperience() {
                           }
                           className={cn(
                             "h-11 w-full cursor-pointer appearance-none rounded-lg border border-[#ddd] bg-white py-2 pl-3 pr-10 font-heading text-sm font-semibold text-brand-black",
-                            "transition-colors hover:border-brand-red/40 focus:border-brand-red focus:outline-none focus:ring-2 focus:ring-brand-red/20",
+                            "transition-colors hover:border-brand-black/40 focus:border-brand-black focus:outline-none focus:ring-2 focus:ring-black/15",
                             !form.quartier && "text-brand-muted"
                           )}
                         >
@@ -899,7 +902,7 @@ export function DevisExperience() {
                         buttonVariants({ size: "lg" }),
                         "flex-[2] font-heading font-bold uppercase",
                         step3Ok && !submitting
-                          ? "border-0 bg-brand-red text-white hover:bg-brand-deepred"
+                          ? "border-0 bg-brand-black text-white hover:bg-black/85"
                           : "cursor-not-allowed bg-brand-muted/40 text-white"
                       )}
                     >
@@ -943,7 +946,7 @@ function RecapRow({
         <button
           type="button"
           onClick={onEdit}
-          className="shrink-0 text-xs font-bold uppercase text-brand-red underline"
+          className="shrink-0 text-xs font-bold uppercase text-brand-black underline"
         >
           Modifier
         </button>

@@ -4,91 +4,98 @@ import { Camera, Share2 } from "lucide-react";
 import { GuineaRibbon } from "@/components/GuineaRibbon";
 import { buildWhatsAppUrl, defaultWhatsAppMessage } from "@/lib/whatsapp";
 import { CONTACT_EMAIL, PHONE_DISPLAY, PHONE_TEL_HREF } from "@/lib/constants";
+import { localizedPath } from "@/lib/i18n/href";
+import type { Locale } from "@/lib/i18n/config";
+import type { Messages } from "@/lib/messages";
 
 const wa = buildWhatsAppUrl(defaultWhatsAppMessage);
 
-export function Footer() {
+type FooterProps = {
+  locale: Locale;
+  messages: Messages;
+};
+
+export function Footer({ locale, messages }: FooterProps) {
   const year = new Date().getFullYear();
+  const f = messages.footer;
+  const copyright = f.copyrightMain.replace("{year}", String(year));
 
   return (
     <footer className="bg-brand-footer text-white">
       <GuineaRibbon />
       <div className="mx-auto max-w-7xl px-4 py-12">
         <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <div className="rounded-md bg-white/5 p-2">
+          <div className="inline-flex shrink-0 rounded-md bg-white p-2 shadow-sm ring-1 ring-black/10">
             <Image
-              src="/logo/arreda-logo.webp"
+              src="/logo/ARREDA.png"
               alt="ARREDA"
-              width={140}
-              height={56}
-              className="h-12 w-auto"
+              width={849}
+              height={280}
+              className="h-14 w-auto"
             />
           </div>
           <p className="max-w-xl font-body text-sm text-white/80">
-            <span className="font-heading font-bold uppercase tracking-wide text-white">
-              ARREDA
-            </span>{" "}
-            — meubles sur mesure, de la conception à la pose, en Guinée depuis 2024.
+            <span className="font-heading font-bold uppercase tracking-wide text-white">ARREDA</span>{" "}
+            {f.tagline}
           </p>
         </div>
 
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <h3 className="font-heading text-sm font-bold uppercase tracking-wide text-white">
-              Navigation
+              {f.navigation}
             </h3>
             <ul className="mt-4 space-y-2 text-sm text-white/75">
               <li>
-                <Link href="/about" className="hover:text-brand-red">
-                  À propos
+                <Link href={localizedPath(locale, "/about")} className="hover:text-white/90">
+                  {messages.nav.about}
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-brand-red">
-                  Services
+                <Link href={localizedPath(locale, "/services")} className="hover:text-white/90">
+                  {messages.nav.services}
                 </Link>
               </li>
               <li>
-                <Link href="/realisations" className="hover:text-brand-red">
-                  Réalisations
+                <Link href={localizedPath(locale, "/realisations")} className="hover:text-white/90">
+                  {messages.nav.realisations}
                 </Link>
               </li>
               <li>
-                <Link href="/devis" className="hover:text-brand-red">
-                  Devis
+                <Link href={localizedPath(locale, "/devis")} className="hover:text-white/90">
+                  {messages.nav.quote}
                 </Link>
               </li>
             </ul>
           </div>
           <div>
             <h3 className="font-heading text-sm font-bold uppercase tracking-wide text-white">
-              Services
+              {f.servicesTitle}
             </h3>
             <ul className="mt-4 space-y-2 text-sm text-white/75">
-              <li>Résidentiel</li>
-              <li>Bureaux</li>
-              <li>Commercial</li>
-              <li>Installation</li>
+              {f.servicesList.map((label) => (
+                <li key={label}>{label}</li>
+              ))}
             </ul>
           </div>
           <div>
             <h3 className="font-heading text-sm font-bold uppercase tracking-wide text-white">
-              Contact
+              {f.contactTitle}
             </h3>
             <ul className="mt-4 space-y-2 text-sm text-white/75">
-              <li>Conakry, Guinée</li>
+              <li>{f.contactLine}</li>
               <li>
-                <a href={PHONE_TEL_HREF} className="hover:text-brand-red">
+                <a href={PHONE_TEL_HREF} className="hover:text-white/90">
                   {PHONE_DISPLAY}
                 </a>
               </li>
               <li>
-                <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-brand-red">
+                <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-white/90">
                   {CONTACT_EMAIL}
                 </a>
               </li>
               <li>
-                <a href={wa} className="hover:text-brand-red">
+                <a href={wa} className="hover:text-white/90">
                   WhatsApp
                 </a>
               </li>
@@ -96,20 +103,20 @@ export function Footer() {
           </div>
           <div>
             <h3 className="font-heading text-sm font-bold uppercase tracking-wide text-white">
-              Réseaux
+              {f.follow}
             </h3>
             <div className="mt-4 flex gap-3">
               <a
                 href="https://facebook.com"
                 aria-label="Facebook"
-                className="rounded-full border border-white/20 p-2 hover:border-brand-red hover:text-brand-red"
+                className="rounded-full border border-white/20 p-2 hover:border-white/50 hover:text-white/90"
               >
                 <Share2 className="h-5 w-5" />
               </a>
               <a
                 href="https://instagram.com"
                 aria-label="Instagram"
-                className="rounded-full border border-white/20 p-2 hover:border-brand-red hover:text-brand-red"
+                className="rounded-full border border-white/20 p-2 hover:border-white/50 hover:text-white/90"
               >
                 <Camera className="h-5 w-5" />
               </a>
@@ -126,9 +133,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t-2 border-brand-red pt-6 text-center text-xs text-white/60">
-          © {year} ARREDA — Tous droits réservés | Fait avec ❤️ à Conakry, Guinée
-        </div>
+        <div className="mt-12 border-t-2 border-brand-red pt-6 text-center text-xs text-white/60">{copyright}</div>
       </div>
     </footer>
   );

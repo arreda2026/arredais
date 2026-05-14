@@ -1,11 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { ServiceIcon } from "@/components/ServiceIcon";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { cn } from "@/lib/utils";
-
-const msg = (title: string) =>
-  `Bonjour ARREDA, je souhaite un devis pour : ${title}.`;
+import { useMessages } from "@/components/i18n/MessagesProvider";
 
 type ServiceEntry = {
   title: string;
@@ -23,8 +23,9 @@ export function ServiceOfferCard({
   index: number;
   featured: boolean;
 }) {
+  const messages = useMessages();
   const num = String(index + 1).padStart(2, "0");
-  const href = buildWhatsAppUrl(msg(service.title));
+  const href = buildWhatsAppUrl(messages.servicesPage.waQuote.replace("{title}", service.title));
 
   return (
     <article
@@ -36,7 +37,7 @@ export function ServiceOfferCard({
       )}
     >
       <div
-        className="pointer-events-none absolute left-0 right-0 top-0 z-10 h-1 origin-left scale-x-0 bg-brand-red transition-transform duration-300 ease-out group-hover:scale-x-100"
+        className="pointer-events-none absolute left-0 right-0 top-0 z-10 h-1 origin-left scale-x-0 bg-brand-black transition-transform duration-300 ease-out group-hover:scale-x-100"
         aria-hidden
       />
 
@@ -53,7 +54,7 @@ export function ServiceOfferCard({
       <div
         className={cn(
           "mt-4 inline-flex h-14 w-14 items-center justify-center rounded-xl",
-          "bg-[#FDE8EA] text-brand-red"
+          "bg-black/5 text-brand-black"
         )}
       >
         <ServiceIcon name={service.icon} className="h-7 w-7" />
@@ -101,11 +102,11 @@ export function ServiceOfferCard({
         className={cn(
           "group/cta mt-6 inline-flex items-center gap-2 font-heading text-sm font-bold uppercase tracking-wide transition-colors",
           featured
-            ? "text-white hover:text-brand-red"
-            : "text-brand-red hover:text-brand-deepred"
+            ? "text-white hover:text-white/80"
+            : "text-brand-black hover:text-brand-black/70"
         )}
       >
-        Demander un devis
+        {messages.nav.quote}
         <ArrowRight
           className="h-4 w-4 transition-transform duration-300 ease-out group-hover/cta:translate-x-1.5"
           aria-hidden

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useMessages } from "@/components/i18n/MessagesProvider";
 
 function useInView<T extends HTMLElement>(options?: IntersectionObserverInit) {
   const ref = useRef<T | null>(null);
@@ -57,18 +58,16 @@ function AnimatedNumber({
   );
 }
 
-export function StatsBar({
-  items,
-}: {
-  items: readonly { value: number; suffix: string; label: string }[];
-}) {
+export function StatsBar() {
+  const messages = useMessages();
+  const items = messages.home.statsBar;
   const { ref, inView } = useInView<HTMLDivElement>();
 
   return (
     <section
       ref={ref}
-      className="w-full bg-brand-red py-10 text-white"
-      aria-label="Chiffres clés"
+      className="w-full bg-brand-black py-10 text-white"
+      aria-label={messages.home.statsAria}
     >
       <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-4 md:grid-cols-4">
         {items.map((s) => (

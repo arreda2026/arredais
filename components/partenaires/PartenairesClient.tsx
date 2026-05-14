@@ -124,7 +124,7 @@ const copy = {
 
 const selectFieldClass = cn(
   "h-11 w-full cursor-pointer appearance-none rounded-lg border border-[#ddd] bg-white py-2 pl-3 pr-10 font-heading text-sm font-semibold text-brand-black",
-  "transition-colors hover:border-brand-red/40 focus:border-brand-red focus:outline-none focus:ring-2 focus:ring-brand-red/20"
+  "transition-colors hover:border-black/30 focus:border-brand-black focus:outline-none focus:ring-2 focus:ring-black/15"
 );
 
 const countries = [
@@ -197,7 +197,7 @@ export function PartenairesClient() {
           <button
             type="button"
             className={`rounded-md px-4 py-2 font-heading text-sm font-bold uppercase ${
-              lang === "fr" ? "bg-brand-red text-white" : "bg-white text-brand-black"
+              lang === "fr" ? "bg-brand-black text-white" : "bg-white text-brand-black"
             }`}
             onClick={() => setLang("fr")}
           >
@@ -206,7 +206,7 @@ export function PartenairesClient() {
           <button
             type="button"
             className={`rounded-md px-4 py-2 font-heading text-sm font-bold uppercase ${
-              lang === "en" ? "bg-brand-red text-white" : "bg-white text-brand-black"
+              lang === "en" ? "bg-brand-black text-white" : "bg-white text-brand-black"
             }`}
             onClick={() => setLang("en")}
           >
@@ -218,7 +218,7 @@ export function PartenairesClient() {
       <section className="px-4 py-14">
         <div className="mx-auto max-w-5xl text-center">
           <GuineaRibbon className="mx-auto mb-6 max-w-lg rounded-sm" />
-          <p className="font-heading text-xs font-bold uppercase tracking-[0.25em] text-brand-red">
+          <p className="font-heading text-xs font-bold uppercase tracking-[0.25em] text-brand-black">
             {t.heroKicker}
           </p>
           <h1 className="mt-3 font-display text-5xl uppercase text-brand-black sm:text-6xl">
@@ -230,7 +230,7 @@ export function PartenairesClient() {
           <div className="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-4 sm:grid-cols-4">
             {t.metrics.map((m) => (
               <div key={m.k} className="rounded-xl border border-black/5 bg-white p-4 shadow-card">
-                <p className="font-display text-3xl text-brand-red">{m.k}</p>
+                <p className="font-display text-3xl text-brand-black">{m.k}</p>
                 <p className="mt-1 text-xs text-brand-gray">{m.v}</p>
               </div>
             ))}
@@ -253,13 +253,13 @@ export function PartenairesClient() {
               key={n.title}
               className="rounded-xl border border-black/5 bg-white p-6 shadow-card transition-shadow hover:shadow-lg"
             >
-              <div className="text-brand-red">
+              <div className="text-brand-black">
                 <ServiceIcon name={n.icon} className="h-8 w-8" />
               </div>
               <h3 className="mt-4 font-heading text-lg font-bold text-brand-black">{n.title}</h3>
               <p className="mt-2 text-sm text-brand-gray">{n.desc}</p>
               <a
-                className="mt-4 inline-block font-heading text-sm font-bold uppercase text-brand-red underline"
+                className="mt-4 inline-block font-heading text-sm font-bold uppercase text-brand-black underline"
                 href={buildWhatsAppUrl(`[Partners] ${n.title}: ${n.cta}`)}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -297,7 +297,7 @@ export function PartenairesClient() {
               onClick={() => trackEvent("pdf_downloaded", { file: "catalogue-arreda" })}
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
-                "inline-flex items-center justify-center border-2 border-brand-red font-heading font-semibold uppercase text-brand-red"
+                "inline-flex items-center justify-center border-2 border-brand-black font-heading font-semibold uppercase text-brand-black hover:bg-brand-offwhite"
               )}
             >
               📄 {t.download}
@@ -388,7 +388,7 @@ export function PartenairesClient() {
               type="submit"
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "w-full border-0 bg-brand-red font-heading font-semibold uppercase text-white hover:bg-brand-deepred"
+                "w-full border-0 bg-brand-black font-heading font-semibold uppercase text-white hover:bg-black/85"
               )}
             >
               {t.labels.send}

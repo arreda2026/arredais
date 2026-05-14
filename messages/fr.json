@@ -1,0 +1,249 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "realisations": "Réalisations",
+    "atelier": "Atelier",
+    "partners": "Partenaires",
+    "contact": "Contact",
+    "quote": "Demander un devis",
+    "menuOpen": "Ouvrir le menu",
+    "menuClose": "Fermer le menu",
+    "menuCloseLabel": "Fermer"
+  },
+  "footer": {
+    "tagline": "— meubles sur mesure, de la conception à la pose, en Guinée depuis 2024.",
+    "navigation": "Navigation",
+    "servicesTitle": "Services",
+    "servicesList": [
+      "Résidentiel",
+      "Bureaux",
+      "Commercial",
+      "Installation"
+    ],
+    "contactTitle": "Contact",
+    "contactLine": "Conakry, Guinée",
+    "follow": "Réseaux",
+    "legal": "Mentions légales & politique de confidentialité (à compléter).",
+    "copyright": "Tous droits réservés.",
+    "copyrightMain": "© {year} ARREDA — Tous droits réservés | Fait avec ❤️ à Conakry, Guinée"
+  },
+  "lang": {
+    "fr": "FR",
+    "en": "EN",
+    "switchTo": "English",
+    "groupLabel": "Choisir la langue"
+  },
+  "home": {
+    "hero": {
+      "line1": "Arreda Italian Style",
+      "line2": "— Donnez vie à vos idées, sur mesure.",
+      "lead": "ARREDA transforme vos espaces avec des créations en bois fabriquées dans notre atelier à Yimbaya, à côté de la Sonapi.",
+      "ctaRealisations": "Voir nos réalisations",
+      "ctaQuote": "Demander un devis",
+      "badge": "200+ projets réalisés",
+      "heroAlt": "Escalier sur mesure — architecture intérieure, bois et courbes, réalisation ARREDA"
+    },
+    "teaser": {
+      "portfolio": "Portfolio",
+      "title": "Nos réalisations",
+      "lead": "Aperçu de nos chantiers livrés. Ouvrez une fiche pour la galerie complète — souvent des photos uniquement après travaux.",
+      "ctaAll": "Voir toutes les réalisations →"
+    },
+    "servicesTitle": "Ce que nous fabriquons",
+    "pillarsTitle": "Pourquoi ARREDA",
+    "testimonialsTitle": "Ils nous font confiance",
+    "statsAria": "Chiffres clés",
+    "pillarsImageAlt": "Ouvrier ARREDA en pleine mesure sur machine de coupe",
+    "finalCta": {
+      "title": "Prêt à transformer votre espace ?",
+      "whatsapp": "WhatsApp",
+      "quoteForm": "Formulaire devis"
+    },
+    "services": [
+      {
+        "title": "Mobilier résidentiel",
+        "description": "Salons, chambres et cuisines pensés pour votre quotidien.",
+        "tags": [
+          "Sur mesure",
+          "Résidentiel",
+          "Bois massif"
+        ],
+        "icon": "sofa"
+      },
+      {
+        "title": "Mobilier de bureau",
+        "description": "Bureaux, rangements et open space pour équipes productives.",
+        "tags": [
+          "Open space",
+          "Ergonomie",
+          "Entreprises"
+        ],
+        "icon": "briefcase"
+      },
+      {
+        "title": "Aménagement commercial",
+        "description": "Hôtels, restaurants et boutiques : image de marque + durabilité.",
+        "tags": [
+          "Retail",
+          "Hôtellerie",
+          "Image de marque"
+        ],
+        "icon": "store"
+      },
+      {
+        "title": "Rénovation & transformation",
+        "description": "Donnez une seconde vie à vos meubles existants avec nos artisans.",
+        "tags": [
+          "Seconde vie",
+          "Artisanal",
+          "Économie circulaire"
+        ],
+        "icon": "refresh"
+      },
+      {
+        "title": "Conseil décoration",
+        "description": "Harmonie des matériaux, couleurs et volumes pour un intérieur cohérent.",
+        "tags": [
+          "Couleurs",
+          "Volumes",
+          "Accompagnement"
+        ],
+        "icon": "palette"
+      },
+      {
+        "title": "Livraison & installation",
+        "description": "Prise de mesures, pose et réglages sur site en Guinée.",
+        "tags": [
+          "Pose",
+          "Conakry",
+          "Clé en main"
+        ],
+        "icon": "truck"
+      }
+    ],
+    "pillars": [
+      {
+        "n": "01",
+        "title": "Fabrication locale",
+        "text": "Nous fabriquons dans notre atelier : pas un catalogue importé."
+      },
+      {
+        "n": "02",
+        "title": "Sur mesure total",
+        "text": "Dimensions, finitions et ergonomie adaptées à votre pièce."
+      },
+      {
+        "n": "03",
+        "title": "Livraison & installation",
+        "text": "Équipe terrain pour une pose soignée et un rendu impeccable."
+      }
+    ],
+    "testimonials": [
+      {
+        "quote": "Salon sur mesure livré en trois semaines, finitions impeccables. ARREDA a transformé notre séjour.",
+        "name": "Mamadou",
+        "role": "Villa — Ratoma"
+      },
+      {
+        "quote": "Cuisine équipée pour notre appartement : écoute, conseils et respect du budget.",
+        "name": "Fatoumata",
+        "role": "Résidence — Kaloum"
+      },
+      {
+        "quote": "Open space bureau : acoustique, rangements et design moderne. Très professionnel.",
+        "name": "Ibrahim",
+        "role": "PME — Hamdallaye"
+      }
+    ],
+    "statsBar": [
+      {
+        "value": 200,
+        "suffix": "+",
+        "label": "Projets réalisés"
+      },
+      {
+        "value": 8,
+        "suffix": " ans",
+        "label": "D'expérience"
+      },
+      {
+        "value": 500,
+        "suffix": "m²",
+        "label": "Atelier de production"
+      },
+      {
+        "value": 100,
+        "suffix": "%",
+        "label": "Fabrication locale"
+      }
+    ]
+  },
+  "aboutPage": {
+    "ctaProjects": "Voir les réalisations"
+  },
+  "servicesPage": {
+    "waQuote": "Bonjour ARREDA, je souhaite un devis pour : {title}.",
+    "ctaLink": "Formulaire devis détaillé",
+    "heroTitle": "Ce que nous fabriquons",
+    "heroLead": "De la conception à la pose, nous couvrons tout le cycle : résidentiel, bureaux, commerce et suivi terrain. Chaque projet est pensé pour le climat, les usages et votre budget à Conakry.",
+    "ctaTitle": "Un projet en tête ? Parlons-en tout de suite.",
+    "ctaLead": "Réponse rapide sur WhatsApp — devis, dimensions ou visite atelier.",
+    "waButton": "Écrire sur WhatsApp",
+    "bgWord": "SERVICES"
+  },
+  "realisationsPage": {
+    "metaTitle": "Réalisations",
+    "metaDescription": "Chaque carte ouvre un projet : texte, lieu, et galerie photo.",
+    "portfolio": "Portfolio",
+    "title": "Réalisations",
+    "lead": "Une sélection de chantiers livrés par ARREDA. Chaque fiche regroupe le récit du projet et une galerie — souvent uniquement après travaux, lorsque les clichés « avant » n'existent pas."
+  },
+  "projectPage": {
+    "breadcrumbHome": "Accueil",
+    "breadcrumbRealisations": "Réalisations",
+    "ctaTitle": "Vous voulez le même résultat ?",
+    "ctaLead": "Parlons de votre projet — nous revenons vers vous avec une proposition adaptée.",
+    "ctaWhatsApp": "Écrire sur WhatsApp",
+    "similarTitle": "Projets similaires",
+    "photosSection": "Photos du chantier",
+    "photosNote": "Clichés pris après la livraison du chantier (aucune photo « avant »).",
+    "compare": "⇄ Comparaison",
+    "sideBySide": "▦ Côte à côte",
+    "before": "Avant",
+    "after": "Après",
+    "enlarge": "Agrandir",
+    "lightbox": "Visionneuse",
+    "close": "Fermer",
+    "prev": "Précédent",
+    "next": "Suivant",
+    "discoverProject": "Découvrir le projet",
+    "waInterest": "Bonjour ARREDA, le projet « {title} » m'intéresse. Pouvez-vous m'en dire plus ?",
+    "roomsNav": "Pièces du projet",
+    "thumbTitle": "Clic : choisir la photo · double-clic : plein écran"
+  },
+  "contactQuickForm": {
+    "title": "Message rapide",
+    "name": "Nom",
+    "message": "Message",
+    "hintPrefix": "Pour un devis détaillé, préférez le",
+    "hintLink": "formulaire devis",
+    "hintSuffix": ".",
+    "submit": "Envoyer via WhatsApp",
+    "openWhatsApp": "Ouvrir WhatsApp",
+    "waNamePrefix": "Nom : ",
+    "defaultMessage": "Bonjour ARREDA, je souhaite des informations sur vos services."
+  },
+  "devis": {
+    "successTitle": "Demande envoyée !",
+    "successLead": "Votre message a été préparé et WhatsApp va s'ouvrir.",
+    "successReply": "L'équipe ARREDA vous répondra sous 24h.",
+    "seeRealisations": "Voir nos réalisations",
+    "backHome": "Retour à l'accueil"
+  },
+  "printActions": {
+    "printPdf": "Imprimer / PDF",
+    "backPartners": "Retour partenaires"
+  }
+}

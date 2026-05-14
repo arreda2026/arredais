@@ -132,7 +132,7 @@ export function BeforeAfterSlider({
 
         <button
           type="button"
-          className="absolute top-1/2 z-10 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize items-center justify-center rounded-full border-2 border-brand-red bg-white text-brand-red shadow-lg"
+          className="absolute top-1/2 z-10 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize items-center justify-center rounded-full border-2 border-brand-black bg-white text-brand-black shadow-lg"
           style={{ left: `${pct}%` }}
           aria-label="Faire glisser pour comparer avant et après"
           onMouseDown={(e) => {
@@ -152,10 +152,10 @@ export function BeforeAfterSlider({
           </span>
         </button>
 
-        <span className="pointer-events-none absolute left-3 top-3 rounded bg-brand-red px-2 py-1 text-xs font-heading font-bold uppercase text-white">
+        <span className="pointer-events-none absolute left-3 top-3 rounded bg-brand-black px-2 py-1 text-xs font-heading font-bold uppercase text-white">
           Avant
         </span>
-        <span className="pointer-events-none absolute right-3 top-3 rounded bg-white px-2 py-1 text-xs font-heading font-bold uppercase text-brand-red ring-1 ring-black/10">
+        <span className="pointer-events-none absolute right-3 top-3 rounded bg-white px-2 py-1 text-xs font-heading font-bold uppercase text-brand-black ring-1 ring-black/10">
           Après
         </span>
       </div>

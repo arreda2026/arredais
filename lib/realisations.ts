@@ -8,16 +8,7 @@ export type ProjectFilter =
   | "Particulier"
   | "Entreprise";
 
-const img = (photoId: string) =>
-  `https://images.unsplash.com/photo-${photoId}?w=800&q=80`;
-
 export type Photo = { id: string; url: string; caption?: string };
-
-const p = (
-  id: string,
-  photoId: string,
-  caption?: string
-): Photo => ({ id, url: img(photoId), caption });
 
 export type Room = {
   id: string;
@@ -42,308 +33,312 @@ export type Project = {
   tags: string[];
 };
 
-const I = {
-  salon1: "1555041469-a586c61ea9bc",
-  salon2: "1586023492125-27b2c045efd7",
-  salon3: "1595520425490-af703f0b2fc6",
-  cuisine1: "1556909114-f6e7ad7d3136",
-  cuisine2: "1600607687939-ce8a6c25118c",
-  cuisine3: "1600585154340-be6161a56a0c",
-  bureau1: "1497366216548-37526070297c",
-  bureau2: "1524758631624-e2822e304c36",
-  bureau3: "1600576331142-8c7fedc728d9",
-  chambre1: "1600210492486-724fe5c67fb0",
-  chambre2: "1618220179428-86a3698b2498",
-  chambre3: "1560185007-cde436f6a4d0",
-  loft1: "1502672260266-1c1ef2d93688",
-  loft2: "1600566753190-17f0faa2a6e3",
-  hotel1: "1631889991528-916487d3d4d5",
-  hotel2: "1600607687939-ce8a6c25118c",
-  retail1: "1441986300917-64674bd600d8",
-  retail2: "1555041469-a586c61ea9bc",
-  atelier1: "1504148455328-c376907d081c",
-  wood1: "1558618666-fcd25c85cd64",
-} as const;
+/** Couverture : fichier 00X dans le dossier (doit exister dans la liste galerie). */
+function localCover(slug: string, index: number) {
+  return `/Realisation/${slug}/${String(index).padStart(3, "0")}.jpeg`;
+}
 
-export const projects: Project[] = [
+/**
+ * Galerie à partir des noms de fichiers réellement présents dans `public/Realisation/{slug}/`.
+ * Mettre à jour la constante `*_FILES` du dossier après ajout/suppression d’images.
+ */
+function localGalleryFiles(slug: string, files: readonly string[]): Photo[] {
+  return files.map((name) => ({
+    id: `${slug}-g-${name.replace(/[^a-zA-Z0-9]/g, "")}`,
+    url: `/Realisation/${slug}/${name}`,
+  }));
+}
+
+const KANKAN_FILES = [
+  "001.jpeg",
+  "002.jpeg",
+  "003.jpeg",
+  "004.jpeg",
+  "005.jpeg",
+  "006.jpeg",
+  "007.jpeg",
+  "008.jpeg",
+  "009.jpeg",
+  "010.jpeg",
+  "011.jpeg",
+  "012.jpeg",
+  "013.jpeg",
+  "014.jpeg",
+  "015.jpeg",
+  "016.jpeg",
+  "017.jpeg",
+  "018.jpeg",
+  "019.jpeg",
+  "020.jpeg",
+  "021.jpeg",
+  "022.jpeg",
+  "023.jpeg",
+  "024.jpeg",
+  "025.jpeg",
+  "026.jpeg",
+  "027.jpeg",
+  "028.jpeg",
+  "029.jpeg",
+  "030.jpeg",
+  "031.jpeg",
+  "032.jpeg",
+  "033.jpeg",
+  "034.jpeg",
+  "035.jpeg",
+  "036.jpeg",
+  "037.jpeg",
+  "038.jpeg",
+  "039.jpeg",
+  "040.jpeg",
+  "041.jpeg",
+  "042.jpeg",
+  "043.jpeg",
+  "044.jpeg",
+  "045.jpeg",
+  "046.jpeg",
+  "047.jpeg",
+  "048.jpeg",
+  "049.jpeg",
+  "050.jpeg",
+  "051.jpeg",
+  "052.jpeg",
+  "053.jpeg",
+] as const;
+
+const MAFEREA_FILES = [
+  "020.jpeg",
+  "021.jpeg",
+  "023.jpeg",
+  "024.jpeg",
+  "025.jpeg",
+  "027.jpeg",
+  "030.jpeg",
+  "031.jpeg",
+  "032.jpeg",
+  "033.jpeg",
+  "034.jpeg",
+  "035.jpeg",
+  "036.jpeg",
+  "037.jpeg",
+  "038.jpeg",
+  "039.jpeg",
+  "040.jpeg",
+  "041.jpeg",
+  "042.jpeg",
+  "043.jpeg",
+  "044.jpeg",
+  "045.jpeg",
+  "046.jpeg",
+] as const;
+
+const BILLY_CONDE_FILES = [
+  "001.jpeg",
+  "002.jpeg",
+  "003.jpeg",
+  "004.jpeg",
+  "005.jpeg",
+  "006.jpeg",
+  "007.jpeg",
+  "008.jpeg",
+  "009.jpeg",
+  "010.jpeg",
+  "011.jpeg",
+  "012.jpeg",
+  "013.jpeg",
+  "014.jpeg",
+  "015.jpeg",
+  "016.jpeg",
+  "017.jpeg",
+  "018.jpeg",
+  "019.jpeg",
+  "020.jpeg",
+  "021.jpeg",
+  "022.jpeg",
+  "023.jpeg",
+  "024.jpeg",
+  "025.jpeg",
+  "026.jpeg",
+  "027.jpeg",
+  "028.jpeg",
+  "029.jpeg",
+  "030.jpeg",
+] as const;
+
+const RESIDENCE_2000_FILES = [
+  "002.jpeg",
+  "003.jpeg",
+  "005.jpeg",
+  "007.jpeg",
+  "008.jpeg",
+  "009.jpeg",
+  "010.jpeg",
+  "011.jpeg",
+  "012.jpeg",
+] as const;
+
+const YIMBAYA_FILES = [
+  "001.jpeg",
+  "002.jpeg",
+  "003.jpeg",
+] as const;
+
+const CAMAYENNE_FILES = [
+  "001.jpeg",
+  "002.jpeg",
+  "003.jpeg",
+  "004.jpeg",
+  "005.jpeg",
+  "006.jpeg",
+] as const;
+
+const localRealisationProjects: Project[] = [
   {
-    slug: "villa-kaloum-residentielle",
-    title: "Villa Kaloum — rénovation résidentielle",
-    location: "Kaloum, Conakry",
+    slug: "kankan",
+    title: "Réalisation — Kankan",
+    location: "Kankan, Guinée",
     category: "Salon",
     clientType: "Particulier",
-    duration: "10 semaines",
-    year: "2025",
-    coverBefore: img(I.salon1),
-    coverAfter: img(I.salon2),
+    duration: "Sur mesure",
+    year: "2026",
+    coverBefore: localCover("kankan", 22),
+    coverAfter: localCover("kankan", 22),
     description:
-      "Rénovation complète d’une villa : circulation des volumes, mobilier sur mesure et finitions adaptées au climat maritime.",
-    tags: ["Villa", "Résidentiel", "Sur mesure"],
+      "Mobilier et aménagement livrés sur site : galerie photo après réalisation (aucun cliché « avant » disponible).",
+    tags: ["Résidentiel", "Sur mesure"],
     rooms: [
       {
-        id: "salon",
-        name: "Salon",
-        icon: "🛋️",
-        before: [
-          p("vk-s-b1", I.salon1, "Ancien séjour saturé"),
-          p("vk-s-b2", I.salon3, "Rangements peu fonctionnels"),
-        ],
-        after: [
-          p("vk-s-a1", I.salon2, "Banquette intégrée"),
-          p("vk-s-a2", I.loft1, "Bibliothèque sur mesure"),
-        ],
-      },
-      {
-        id: "cuisine",
-        name: "Cuisine",
-        icon: "🍳",
-        before: [
-          p("vk-c-b1", I.cuisine1, "Cuisine fermée"),
-          p("vk-c-b2", I.wood1, "Plan de travail obsolète"),
-        ],
-        after: [
-          p("vk-c-a1", I.cuisine2, "Îlot central"),
-          p("vk-c-a2", I.cuisine3, "Façades sans poignées"),
-          p("vk-c-a3", I.salon2, "Ouverture sur le séjour"),
-        ],
-      },
-      {
-        id: "chambre",
-        name: "Chambre principale",
-        icon: "🛏️",
-        before: [p("vk-ch-b1", I.chambre3, "Dressing standard"), p("vk-ch-b2", I.chambre1)],
-        after: [p("vk-ch-a1", I.chambre1, "Suite avec tête de lit"), p("vk-ch-a2", I.chambre2)],
-      },
-      {
-        id: "bureau",
-        name: "Bureau",
-        icon: "💼",
-        before: [p("vk-bu-b1", I.bureau1), p("vk-bu-b2", I.bureau3)],
-        after: [p("vk-bu-a1", I.bureau2), p("vk-bu-a2", I.loft2)],
+        id: "galerie",
+        name: "Photos du chantier",
+        icon: "📷",
+        before: [],
+        after: localGalleryFiles("kankan", KANKAN_FILES),
       },
     ],
   },
   {
-    slug: "penthouse-matoto",
-    title: "Penthouse Matoto — volumes contemporains",
-    location: "Matoto, Conakry",
-    category: "Chambre",
-    clientType: "Particulier",
-    duration: "8 semaines",
-    year: "2025",
-    coverBefore: img(I.loft1),
-    coverAfter: img(I.loft2),
-    description:
-      "Un penthouse pensé comme un loft : chambres suites, salons ouverts et matériaux sobres pour maximiser la lumière.",
-    tags: ["Penthouse", "Contemporain"],
-    rooms: [
-      {
-        id: "sejour",
-        name: "Grand séjour",
-        icon: "🛋️",
-        before: [p("pm-s-b1", I.loft1), p("pm-s-b2", I.salon1)],
-        after: [p("pm-s-a1", I.salon2), p("pm-s-a2", I.loft2)],
-      },
-      {
-        id: "suite",
-        name: "Suite parentale",
-        icon: "🛏️",
-        before: [p("pm-su-b1", I.chambre1), p("pm-su-b2", I.chambre3)],
-        after: [p("pm-su-a1", I.chambre2), p("pm-su-a2", I.chambre1)],
-      },
-      {
-        id: "cuisine2",
-        name: "Cuisine ouverte",
-        icon: "🍳",
-        before: [p("pm-c-b1", I.cuisine1), p("pm-c-b2", I.cuisine1)],
-        after: [p("pm-c-a1", I.cuisine2), p("pm-c-a2", I.cuisine3)],
-      },
-      {
-        id: "terrasse",
-        name: "Loggia",
-        icon: "🌿",
-        before: [p("pm-t-b1", I.salon3), p("pm-t-b2", I.loft1)],
-        after: [p("pm-t-a1", I.salon2), p("pm-t-a2", I.loft2)],
-      },
-      {
-        id: "bureau-ph",
-        name: "Coin bureau",
-        icon: "💼",
-        before: [p("pm-b-b1", I.bureau3)],
-        after: [p("pm-b-a1", I.bureau2), p("pm-b-a2", I.bureau1)],
-      },
-    ],
-  },
-  {
-    slug: "restaurant-yattaya",
-    title: "Restaurant Yattaya — espace convivial",
-    location: "Yattaya, Conakry",
-    category: "Commercial",
-    clientType: "Entreprise",
-    duration: "6 semaines",
-    year: "2025",
-    coverBefore: img(I.hotel1),
-    coverAfter: img(I.salon2),
-    description:
-      "Salle principale, bar et terrasse couverte : bois thermotraité, banquettes et identité visuelle intégrée.",
-    tags: ["Restaurant", "HORECA"],
-    rooms: [
-      {
-        id: "salle",
-        name: "Salle principale",
-        icon: "🍽️",
-        before: [p("ry-s-b1", I.hotel1), p("ry-s-b2", I.retail1)],
-        after: [p("ry-s-a1", I.salon2), p("ry-s-a2", I.hotel2)],
-      },
-      {
-        id: "bar",
-        name: "Bar",
-        icon: "🍸",
-        before: [p("ry-ba-b1", I.cuisine1), p("ry-ba-b2", I.wood1)],
-        after: [p("ry-ba-a1", I.cuisine3), p("ry-ba-a2", I.cuisine2)],
-      },
-      {
-        id: "terrasse-r",
-        name: "Terrasse",
-        icon: "☀️",
-        before: [p("ry-t-b1", I.salon3)],
-        after: [p("ry-t-a1", I.loft2), p("ry-t-a2", I.salon2)],
-      },
-    ],
-  },
-  {
-    slug: "coworking-almamya",
-    title: "Coworking Almamya — productivité & acoustique",
-    location: "Kaloum, Conakry",
-    category: "Bureau",
-    clientType: "Entreprise",
-    duration: "7 semaines",
-    year: "2024",
-    coverBefore: img(I.bureau1),
-    coverAfter: img(I.bureau2),
-    description:
-      "Cabines téléphoniques, hot-desks et salles de réunion : parcours fluides et matériaux ABSORBants pour open space.",
-    tags: ["Bureau", "Tertiaire", "Acoustique"],
-    rooms: [
-      {
-        id: "openspace",
-        name: "Open space",
-        icon: "🪑",
-        before: [p("ca-o-b1", I.bureau1), p("ca-o-b2", I.bureau3)],
-        after: [p("ca-o-a1", I.bureau2), p("ca-o-a2", I.bureau1)],
-      },
-      {
-        id: "reunion",
-        name: "Salle de réunion",
-        icon: "📊",
-        before: [p("ca-r-b1", I.bureau3), p("ca-r-b2", I.loft1)],
-        after: [p("ca-r-a1", I.bureau2), p("ca-r-a2", I.salon2)],
-      },
-      {
-        id: "accueil",
-        name: "Accueil",
-        icon: "✨",
-        before: [p("ca-ac-b1", I.retail1)],
-        after: [p("ca-ac-a1", I.hotel2), p("ca-ac-a2", I.salon2)],
-      },
-      {
-        id: "phone",
-        name: "Cabines focus",
-        icon: "🔇",
-        before: [p("ca-p-b1", I.atelier1), p("ca-p-b2", I.bureau1)],
-        after: [p("ca-p-a1", I.bureau3), p("ca-p-a2", I.loft2)],
-      },
-    ],
-  },
-  {
-    slug: "residence-kippe-familiale",
-    title: "Résidence Kipé — cœur de maison",
-    location: "Kipé, Conakry",
+    slug: "maferea",
+    title: "Réalisation — Maféréa",
+    location: "Maféréa, Guinée",
     category: "Cuisine",
     clientType: "Particulier",
-    duration: "9 semaines",
-    year: "2025",
-    coverBefore: img(I.cuisine1),
-    coverAfter: img(I.cuisine2),
+    duration: "Sur mesure",
+    year: "2026",
+    coverBefore: localCover("maferea", 40),
+    coverAfter: localCover("maferea", 40),
     description:
-      "Circulation jour/nuit repensée : cuisine centrale, cellier et salon reliés pour une famille nombreuse.",
-    tags: ["Résidence", "Famille"],
+      "Cuisine et espaces de vie livrés clés en main. Galerie prise après la pose.",
+    tags: ["Cuisine", "Résidentiel"],
     rooms: [
       {
-        id: "cuisine-rk",
-        name: "Cuisine centrale",
-        icon: "🍳",
-        before: [p("rk-c-b1", I.cuisine1), p("rk-c-b2", I.wood1)],
-        after: [p("rk-c-a1", I.cuisine2), p("rk-c-a2", I.cuisine3)],
-      },
-      {
-        id: "salon-rk",
-        name: "Salon",
-        icon: "🛋️",
-        before: [p("rk-s-b1", I.salon1), p("rk-s-b2", I.salon3)],
-        after: [p("rk-s-a1", I.salon2), p("rk-s-a2", I.loft1)],
-      },
-      {
-        id: "ch1",
-        name: "Chambre enfants",
-        icon: "🧸",
-        before: [p("rk-e-b1", I.chambre3), p("rk-e-b2", I.chambre1)],
-        after: [p("rk-e-a1", I.chambre2), p("rk-e-a2", I.chambre1)],
-      },
-      {
-        id: "ch2",
-        name: "Chambre invités",
-        icon: "🛏️",
-        before: [p("rk-i-b1", I.chambre1)],
-        after: [p("rk-i-a1", I.chambre2), p("rk-i-a2", I.chambre3)],
+        id: "galerie",
+        name: "Photos du chantier",
+        icon: "📷",
+        before: [],
+        after: localGalleryFiles("maferea", MAFEREA_FILES),
       },
     ],
   },
   {
-    slug: "boutique-miniere",
-    title: "Boutique Minière — vitrine & stock",
-    location: "Minière, Conakry",
-    category: "Commercial",
-    clientType: "Entreprise",
-    duration: "5 semaines",
-    year: "2025",
-    coverBefore: img(I.retail1),
-    coverAfter: img(I.retail2),
+    slug: "billy-conde",
+    title: "Réalisation — Billy Conde",
+    location: "Conakry, Guinée",
+    category: "Chambre",
+    clientType: "Particulier",
+    duration: "Sur mesure",
+    year: "2026",
+    coverBefore: localCover("billy-conde", 11),
+    coverAfter: localCover("billy-conde", 11),
     description:
-      "Parcours client, vitrines basses et réserve invisible : modularité pour les collections saisonnières.",
-    tags: ["Retail", "Modulaire"],
+      "Aménagement intérieur livré sur mesure. Photos après chantier.",
+    tags: ["Résidentiel", "Dressing"],
     rooms: [
       {
-        id: "vitrine",
-        name: "Vitrine",
-        icon: "🪟",
-        before: [p("bm-v-b1", I.retail1), p("bm-v-b2", I.hotel1)],
-        after: [p("bm-v-a1", I.retail2), p("bm-v-a2", I.salon2)],
+        id: "galerie",
+        name: "Photos du chantier",
+        icon: "📷",
+        before: [],
+        after: localGalleryFiles("billy-conde", BILLY_CONDE_FILES),
       },
+    ],
+  },
+  {
+    slug: "residence-2000",
+    title: "Résidence 2000",
+    location: "Conakry, Guinée",
+    category: "Salon",
+    clientType: "Particulier",
+    duration: "Sur mesure",
+    year: "2026",
+    coverBefore: localCover("residence-2000", 8),
+    coverAfter: localCover("residence-2000", 8),
+    description:
+      "Projet résidentiel : finitions et mobilier ARREDA. Galerie après livraison.",
+    tags: ["Résidence", "Sur mesure"],
+    rooms: [
       {
-        id: "parcours",
-        name: "Parcours vente",
-        icon: "🛍️",
-        before: [p("bm-p-b1", I.salon1), p("bm-p-b2", I.loft1)],
-        after: [p("bm-p-a1", I.hotel2), p("bm-p-a2", I.loft2)],
+        id: "galerie",
+        name: "Photos du chantier",
+        icon: "📷",
+        before: [],
+        after: localGalleryFiles("residence-2000", RESIDENCE_2000_FILES),
       },
+    ],
+  },
+  {
+    slug: "yimbaya",
+    title: "Réalisation — Yimbaya",
+    location: "Yimbaya, Guinée",
+    category: "Salon",
+    clientType: "Particulier",
+    duration: "Sur mesure",
+    year: "2026",
+    coverBefore: localCover("yimbaya", 2),
+    coverAfter: localCover("yimbaya", 2),
+    description:
+      "Sélection de clichés après réalisation du chantier.",
+    tags: ["Résidentiel"],
+    rooms: [
       {
-        id: "reserve",
-        name: "Réserve",
-        icon: "📦",
-        before: [p("bm-r-b1", I.atelier1)],
-        after: [p("bm-r-a1", I.bureau1), p("bm-r-a2", I.wood1)],
+        id: "galerie",
+        name: "Photos du chantier",
+        icon: "📷",
+        before: [],
+        after: localGalleryFiles("yimbaya", YIMBAYA_FILES),
       },
+    ],
+  },
+  {
+    slug: "camayenne",
+    title: "Réalisation — Camayenne",
+    location: "Camayenne, Conakry",
+    category: "Bureau",
+    clientType: "Particulier",
+    duration: "Sur mesure",
+    year: "2026",
+    coverBefore: localCover("camayenne", 4),
+    coverAfter: localCover("camayenne", 4),
+    description:
+      "Aménagement livré : photos prises après la pose (inclut des clichés d’archives regroupés ici).",
+    tags: ["Conakry", "Sur mesure"],
+    rooms: [
       {
-        id: "caisse",
-        name: "Accueil caisse",
-        icon: "💳",
-        before: [p("bm-c-b1", I.bureau3)],
-        after: [p("bm-c-a1", I.bureau2)],
+        id: "galerie",
+        name: "Photos du chantier",
+        icon: "📷",
+        before: [],
+        after: localGalleryFiles("camayenne", CAMAYENNE_FILES),
       },
     ],
   },
 ];
+
+export const projects: Project[] = localRealisationProjects;
+
+/** Projet sans photos « avant » : uniquement galerie après chantier. */
+export function projectIsAfterPhotosOnly(project: Project): boolean {
+  if (project.rooms.length === 0) return false;
+  return project.rooms.every((r) => r.before.length === 0);
+}
 
 export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);

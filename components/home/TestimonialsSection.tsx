@@ -2,9 +2,12 @@
 
 import { motion } from "framer-motion";
 import { RedAccentLine } from "@/components/RedAccentLine";
-import { testimonials } from "@/lib/data";
+import { useMessages } from "@/components/i18n/MessagesProvider";
 
 export function TestimonialsSection() {
+  const messages = useMessages();
+  const testimonials = messages.home.testimonials;
+
   return (
     <section className="bg-brand-white py-16">
       <div className="mx-auto max-w-7xl px-4">
@@ -14,7 +17,7 @@ export function TestimonialsSection() {
           viewport={{ once: true }}
         >
           <h2 className="font-display text-4xl uppercase text-brand-black sm:text-5xl">
-            Ils nous font confiance
+            {messages.home.testimonialsTitle}
           </h2>
           <RedAccentLine />
         </motion.div>
@@ -35,14 +38,10 @@ export function TestimonialsSection() {
               >
                 “
               </span>
-              <p className="relative z-10 font-body text-sm leading-relaxed text-brand-gray">
-                {t.quote}
-              </p>
+              <p className="relative z-10 font-body text-sm leading-relaxed text-brand-gray">{t.quote}</p>
               <footer className="relative z-10 mt-4 font-heading text-sm font-bold text-brand-black">
                 {t.name}
-                <span className="mt-1 block text-xs font-medium text-brand-muted">
-                  {t.role}
-                </span>
+                <span className="mt-1 block text-xs font-medium text-brand-muted">{t.role}</span>
               </footer>
             </motion.blockquote>
           ))}

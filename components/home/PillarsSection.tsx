@@ -3,9 +3,12 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { RedAccentLine } from "@/components/RedAccentLine";
-import { pillars } from "@/lib/data";
+import { useMessages } from "@/components/i18n/MessagesProvider";
 
 export function PillarsSection() {
+  const messages = useMessages();
+  const pillars = messages.home.pillars;
+
   return (
     <section className="bg-brand-offwhite py-16">
       <div className="mx-auto max-w-7xl px-4">
@@ -15,7 +18,7 @@ export function PillarsSection() {
           viewport={{ once: true }}
         >
           <h2 className="font-display text-4xl uppercase text-brand-black sm:text-5xl">
-            Pourquoi ARREDA
+            {messages.home.pillarsTitle}
           </h2>
           <RedAccentLine />
         </motion.div>
@@ -34,12 +37,8 @@ export function PillarsSection() {
                 <span className="pointer-events-none absolute -right-2 -top-6 font-display text-[120px] leading-none text-brand-red/10">
                   {p.n}
                 </span>
-                <p className="font-heading text-xs font-bold uppercase tracking-widest text-brand-red">
-                  {p.n}
-                </p>
-                <h3 className="mt-2 font-heading text-xl font-bold text-brand-black">
-                  {p.title}
-                </h3>
+                <p className="font-heading text-xs font-bold uppercase tracking-widest text-brand-red">{p.n}</p>
+                <h3 className="mt-2 font-heading text-xl font-bold text-brand-black">{p.title}</h3>
                 <p className="mt-2 font-body text-brand-gray">{p.text}</p>
               </motion.div>
             ))}
@@ -53,7 +52,7 @@ export function PillarsSection() {
           >
             <Image
               src="/Ouvrier/ouvrier-pourquoi.webp"
-              alt="Ouvrier ARREDA en pleine mesure sur machine de coupe"
+              alt={messages.home.pillarsImageAlt}
               width={900}
               height={1100}
               className="h-full w-full object-cover"

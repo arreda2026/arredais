@@ -1,0 +1,249 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "realisations": "Projects",
+    "atelier": "Workshop",
+    "partners": "Partners",
+    "contact": "Contact",
+    "quote": "Request a quote",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
+    "menuCloseLabel": "Close"
+  },
+  "footer": {
+    "tagline": "— bespoke furniture, from design to installation in Guinea since 2024.",
+    "navigation": "Navigation",
+    "servicesTitle": "Services",
+    "servicesList": [
+      "Residential",
+      "Offices",
+      "Commercial",
+      "Installation"
+    ],
+    "contactTitle": "Contact",
+    "contactLine": "Conakry, Guinea",
+    "follow": "Social",
+    "legal": "Legal notice & privacy policy (to be completed).",
+    "copyright": "All rights reserved.",
+    "copyrightMain": "© {year} ARREDA — All rights reserved | Made with ❤️ in Conakry, Guinea"
+  },
+  "lang": {
+    "fr": "FR",
+    "en": "EN",
+    "switchTo": "Français",
+    "groupLabel": "Choose language"
+  },
+  "home": {
+    "hero": {
+      "line1": "Arreda Italian Style",
+      "line2": "— Bring your ideas to life, bespoke.",
+      "lead": "ARREDA transforms your spaces with woodwork made in our Yimbaya workshop, next to Sonapi.",
+      "ctaRealisations": "See our work",
+      "ctaQuote": "Request a quote",
+      "badge": "200+ projects delivered",
+      "heroAlt": "Custom staircase — interior architecture, wood and curves, ARREDA project"
+    },
+    "teaser": {
+      "portfolio": "Portfolio",
+      "title": "Our projects",
+      "lead": "A snapshot of completed sites. Open a project page for the full gallery — often photos taken after handover only.",
+      "ctaAll": "See all projects →"
+    },
+    "servicesTitle": "What we build",
+    "pillarsTitle": "Why ARREDA",
+    "testimonialsTitle": "They trust us",
+    "statsAria": "Key figures",
+    "pillarsImageAlt": "ARREDA worker taking measurements at cutting equipment",
+    "finalCta": {
+      "title": "Ready to transform your space?",
+      "whatsapp": "WhatsApp",
+      "quoteForm": "Quote form"
+    },
+    "services": [
+      {
+        "title": "Residential furniture",
+        "description": "Living rooms, bedrooms and kitchens designed for daily life.",
+        "tags": [
+          "Bespoke",
+          "Residential",
+          "Solid wood"
+        ],
+        "icon": "sofa"
+      },
+      {
+        "title": "Office furniture",
+        "description": "Desks, storage and open-plan layouts for productive teams.",
+        "tags": [
+          "Open plan",
+          "Ergonomics",
+          "Business"
+        ],
+        "icon": "briefcase"
+      },
+      {
+        "title": "Commercial fit-out",
+        "description": "Hotels, restaurants and retail: brand image plus durability.",
+        "tags": [
+          "Retail",
+          "Hospitality",
+          "Branding"
+        ],
+        "icon": "store"
+      },
+      {
+        "title": "Renovation & transformation",
+        "description": "Give existing joinery a second life with our craftsmen.",
+        "tags": [
+          "Second life",
+          "Craft",
+          "Circular economy"
+        ],
+        "icon": "refresh"
+      },
+      {
+        "title": "Interior styling advice",
+        "description": "Harmony of materials, colours and volumes for a coherent interior.",
+        "tags": [
+          "Colour",
+          "Volumes",
+          "Guidance"
+        ],
+        "icon": "palette"
+      },
+      {
+        "title": "Delivery & installation",
+        "description": "On-site measuring, fitting and adjustments across Guinea.",
+        "tags": [
+          "Installation",
+          "Conakry",
+          "Turnkey"
+        ],
+        "icon": "truck"
+      }
+    ],
+    "pillars": [
+      {
+        "n": "01",
+        "title": "Local production",
+        "text": "We manufacture in our workshop — not an imported catalogue."
+      },
+      {
+        "n": "02",
+        "title": "Fully bespoke",
+        "text": "Dimensions, finishes and ergonomics tailored to your room."
+      },
+      {
+        "n": "03",
+        "title": "Delivery & installation",
+        "text": "Field teams for careful installation and a flawless finish."
+      }
+    ],
+    "testimonials": [
+      {
+        "quote": "Custom living room delivered in three weeks, flawless finishes. ARREDA transformed our lounge.",
+        "name": "Mamadou",
+        "role": "Villa — Ratoma"
+      },
+      {
+        "quote": "Fitted kitchen for our flat: listening, advice and respect for the budget.",
+        "name": "Fatoumata",
+        "role": "Residence — Kaloum"
+      },
+      {
+        "quote": "Office open space: acoustics, storage and modern design. Very professional.",
+        "name": "Ibrahim",
+        "role": "SME — Hamdallaye"
+      }
+    ],
+    "statsBar": [
+      {
+        "value": 200,
+        "suffix": "+",
+        "label": "Projects delivered"
+      },
+      {
+        "value": 8,
+        "suffix": " yrs",
+        "label": "Experience"
+      },
+      {
+        "value": 500,
+        "suffix": "m²",
+        "label": "Workshop floor"
+      },
+      {
+        "value": 100,
+        "suffix": "%",
+        "label": "Local production"
+      }
+    ]
+  },
+  "aboutPage": {
+    "ctaProjects": "See our projects"
+  },
+  "servicesPage": {
+    "waQuote": "Hello ARREDA, I would like a quote for: {title}.",
+    "ctaLink": "Detailed quote form",
+    "heroTitle": "What we build",
+    "heroLead": "From design to installation we cover the full cycle: residential, offices, commercial and on-site follow-up. Each project is shaped for the climate, how you use the space and your budget in Conakry.",
+    "ctaTitle": "Have a project in mind? Let’s talk now.",
+    "ctaLead": "Quick replies on WhatsApp — quotes, measurements or a workshop visit.",
+    "waButton": "Message on WhatsApp",
+    "bgWord": "SERVICES"
+  },
+  "realisationsPage": {
+    "metaTitle": "Projects",
+    "metaDescription": "Each card opens a project: story, location, and photo gallery.",
+    "portfolio": "Portfolio",
+    "title": "Projects",
+    "lead": "A selection of sites delivered by ARREDA. Each page brings together the project story and a gallery — often photos taken after completion, when “before” shots do not exist."
+  },
+  "projectPage": {
+    "breadcrumbHome": "Home",
+    "breadcrumbRealisations": "Projects",
+    "ctaTitle": "Want the same result?",
+    "ctaLead": "Tell us about your project — we will come back with a tailored proposal.",
+    "ctaWhatsApp": "Message on WhatsApp",
+    "similarTitle": "Similar projects",
+    "photosSection": "Site photos",
+    "photosNote": "Photos taken after handover (no “before” pictures).",
+    "compare": "⇄ Compare",
+    "sideBySide": "▦ Side by side",
+    "before": "Before",
+    "after": "After",
+    "enlarge": "Enlarge",
+    "lightbox": "Lightbox",
+    "close": "Close",
+    "prev": "Previous",
+    "next": "Next",
+    "discoverProject": "View project",
+    "waInterest": "Hello ARREDA, I am interested in the project \"{title}\". Could you tell me more?",
+    "roomsNav": "Project rooms",
+    "thumbTitle": "Click: pick photo · double-click: fullscreen"
+  },
+  "contactQuickForm": {
+    "title": "Quick message",
+    "name": "Name",
+    "message": "Message",
+    "hintPrefix": "For a detailed quote, please use the",
+    "hintLink": "quote form",
+    "hintSuffix": ".",
+    "submit": "Send via WhatsApp",
+    "openWhatsApp": "Open WhatsApp",
+    "waNamePrefix": "Name: ",
+    "defaultMessage": "Hello ARREDA, I would like more information about your services."
+  },
+  "devis": {
+    "successTitle": "Request sent!",
+    "successLead": "Your message is ready and WhatsApp will open.",
+    "successReply": "The ARREDA team will reply within 24 hours.",
+    "seeRealisations": "See our projects",
+    "backHome": "Back to home"
+  },
+  "printActions": {
+    "printPdf": "Print / PDF",
+    "backPartners": "Back to partners"
+  }
+}

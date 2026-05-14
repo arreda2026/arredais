@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import "@fontsource/bebas-neue/400.css";
 import "@fontsource/montserrat/600.css";
 import "@fontsource/montserrat/700.css";
@@ -6,12 +7,11 @@ import "@fontsource/montserrat/800.css";
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
 import "./globals.css";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Analytics } from "@/components/Analytics";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/constants";
+import { isLocale, type Locale } from "@/lib/i18n/config";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -40,19 +40,22 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const h = await headers();
+  const raw = h.get("x-locale") ?? "fr";
+  const locale: Locale = isLocale(raw) ? raw : "fr";
+  const htmlLang = locale === "en" ? "en" : "fr";
+
   return (
-    <html lang="fr" className="font-body">
+    <html lang={htmlLang} className="font-body" suppressHydrationWarning>
       <body className="min-h-screen bg-brand-white text-brand-black antialiased">
         <JsonLd />
         <Analytics />
-        <Navbar />
-        <main className="min-h-[50vh]">{children}</main>
-        <Footer />
+        {children}
         <WhatsAppButton />
       </body>
     </html>

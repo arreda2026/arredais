@@ -105,6 +105,7 @@ export {
   countProjectRooms,
   countProjectPhotos,
   getSimilarProjects,
+  projectIsAfterPhotosOnly,
 } from "@/lib/realisations";
 
 export const processSteps = [
