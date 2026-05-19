@@ -181,7 +181,93 @@
     ]
   },
   "aboutPage": {
-    "ctaProjects": "Voir les réalisations"
+    "metaTitle": "À propos",
+    "metaDescription": "ARREDA : menuiserie et mobilier sur mesure à Conakry — histoire, mission, savoir-faire et fabrication locale.",
+    "metaOgTitle": "À propos | ARREDA",
+    "metaOgDescription": "Design, fabrication et pose : une équipe dédiée au sur mesure en Guinée.",
+    "heroTitle": "À propos d’ARREDA",
+    "heroLead": "ARREDA conçoit et fabrique du mobilier sur mesure en Guinée : du premier croquis à la pose chez vous, avec une exigence de finition et un accompagnement clair à chaque étape.",
+    "historyTitle": "Notre histoire",
+    "historyP1": "ARREDA est née en 2024 d’une idée simple : offrir des intérieurs durables et soignés, pensés pour le climat et les usages locaux, sans se limiter aux catalogues importés. Nous réunissons menuisiers, designers et équipes de pose pour livrer des projets résidentiels et professionnels à Conakry et sur le territoire.",
+    "historyP2": "Chaque chantier est l’occasion de combiner esthétique italienne (notre ADN stylistique), matériaux choisis avec discernement et savoir-faire artisanal. Notre objectif : un résultat qui dure, facile à vivre au quotidien et aligné sur ce que vous aviez en tête.",
+    "historyHighlight": "Ce qui nous distingue : fabrication locale, transparence sur les délais, et une relation de proximité avec nos clients — avant, pendant et après la livraison.",
+    "historyBullets": [
+      "Devis détaillé et conseils pour prioriser les postes selon votre budget.",
+      "Essences de bois et stratifiés adaptés à l’humidité et à l’usage (cuisine, salle de bain, bureau).",
+      "Suivi de chantier et respect des engagements annoncés."
+    ],
+    "historyImageAlt": "Atelier et savoir-faire ARREDA",
+    "missionVisionTitle": "Mission & vision",
+    "missionTitle": "Mission",
+    "missionP1": "Concevoir et fabriquer des meubles sur mesure qui améliorent le quotidien des familles et des entreprises en Guinée, avec un service clé en main : mesures, fabrication, livraison et installation.",
+    "missionP2": "Nous voulons rendre le sur mesure accessible sans sacrifier la qualité — grâce à une organisation locale et des processus clairs.",
+    "visionTitle": "Vision",
+    "visionP1": "Devenir une référence en Afrique de l’Ouest pour l’aménagement intérieur artisanal exigeant, reconnu pour la fiabilité de nos livraisons et la finesse de nos finitions.",
+    "visionP2": "À terme, porter plus loin le savoir-faire « made in Guinea » en collaborant avec des architectes, promoteurs et marques qui partagent nos standards.",
+    "expertiseTitle": "Notre savoir-faire",
+    "expertiseLead": "Quatre piliers qui structurent chaque collaboration avec ARREDA.",
+    "expertise": [
+      {
+        "title": "Conception sur mesure",
+        "text": "Prise de cotes, plans et choix des volumes pour s’adapter à votre pièce, à vos habitudes et à votre budget."
+      },
+      {
+        "title": "Fabrication à l’atelier",
+        "text": "Découpe, assemblage et finitions dans notre atelier à Conakry : contrôle qualité à chaque étape."
+      },
+      {
+        "title": "Livraison & pose",
+        "text": "Transport soigné et installation sur site par nos équipes pour un rendu conforme à ce qui a été validé."
+      },
+      {
+        "title": "Résidentiel & pro",
+        "text": "Villas, appartements, bureaux, commerces : mobilier fixe ou modulaire, du dressing à la cuisine équipée."
+      }
+    ],
+    "journeyTitle": "Votre projet, en quatre temps",
+    "journey": [
+      {
+        "n": "01",
+        "title": "Échange & visite",
+        "desc": "Compréhension du besoin, conseils matériaux et visite technique si nécessaire."
+      },
+      {
+        "n": "02",
+        "title": "Proposition",
+        "desc": "Estimation, planning indicatif et validation des plans avant lancement fabrication."
+      },
+      {
+        "n": "03",
+        "title": "Production",
+        "desc": "Fabrication dans nos ateliers avec points d’étape pour les projets les plus complexes."
+      },
+      {
+        "n": "04",
+        "title": "Livraison",
+        "desc": "Pose, réglages et remise des ouvrages prêts à l’usage."
+      }
+    ],
+    "prideTitle": "Fierté guinéenne",
+    "prideP1": "Nos couleurs, nos quartiers et la réalité du terrain guident nos choix techniques et esthétiques. ARREDA est fier de fabriquer à Conakry pour les familles et les entreprises du pays, et pour les partenaires qui investissent en Afrique de l’Ouest.",
+    "prideP2": "Le drapeau guinéen rappelle notre ancrage local ; le style « Italian » incarne notre exigence de lignes sobres et de finitions soignées.",
+    "ctaProjects": "Voir les réalisations",
+    "personnel": {
+      "title": "Notre équipe",
+      "lead": "Chez ARREDA, direction, conception, administration et logistique travaillent main dans la main à chaque étape de vos projets sur mesure. Une équipe experte et structurée, engagée à vos côtés de la définition du besoin jusqu’à la livraison, pour garantir qualité, délais et sérénité tout au long de votre chantier.",
+      "roles": {
+        "gerant-associe": "Gérant associé",
+        "gerant-manager": "Gérant · Manager",
+        "responsable-admin-financier": "Responsable administratif et financier",
+        "architecte": "Architecte",
+        "charge-logistique": "Chargé·e logistique"
+      },
+      "prev": "Photo précédente",
+      "next": "Photo suivante",
+      "counter": "{current} / {total}",
+      "goTo": "Afficher le poste : {role}",
+      "carouselLabel": "Carrousel de l’équipe ARREDA",
+      "pausedHint": "défilement en pause"
+    }
   },
   "servicesPage": {
     "waQuote": "Bonjour ARREDA, je souhaite un devis pour : {title}.",

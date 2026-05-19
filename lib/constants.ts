@@ -35,3 +35,7 @@ export const GA_MEASUREMENT_ID = sanitizeGaMeasurementId(
 );
 
 export const GTM_ID = sanitizeGtmId(process.env.NEXT_PUBLIC_GTM_ID);
+
+/** Fichier dans `public/docs/` */
+export const CATALOGUE_PDF_FILE = "CATALOGUE ARREDA.pdf";
+export const CATALOGUE_PDF_HREF = `/docs/${encodeURIComponent(CATALOGUE_PDF_FILE)}`;

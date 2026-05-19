@@ -12,6 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
+import { CATALOGUE_PDF_FILE, CATALOGUE_PDF_HREF } from "@/lib/constants";
 
 type Lang = "fr" | "en";
 
@@ -290,8 +291,8 @@ export function PartenairesClient() {
 
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a
-              href="/docs/catalogue-arreda.pdf"
-              download="CATALOGUE-ARREDA.pdf"
+              href={CATALOGUE_PDF_HREF}
+              download={CATALOGUE_PDF_FILE}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackEvent("pdf_downloaded", { file: "catalogue-arreda" })}

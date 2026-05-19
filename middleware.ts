@@ -9,6 +9,7 @@ const PUBLIC_PREFIXES = [
   "/documents",
   "/Ouvrier",
   "/Realisation",
+  "/personel",
   "/favicon.ico",
   "/robots.txt",
   "/sitemap.xml",

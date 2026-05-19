@@ -181,7 +181,93 @@
     ]
   },
   "aboutPage": {
-    "ctaProjects": "See our projects"
+    "metaTitle": "About",
+    "metaDescription": "ARREDA: bespoke joinery and furniture in Conakry — our story, mission, expertise and local manufacturing.",
+    "metaOgTitle": "About | ARREDA",
+    "metaOgDescription": "Design, build and install: a team dedicated to bespoke work in Guinea.",
+    "heroTitle": "About ARREDA",
+    "heroLead": "ARREDA designs and builds bespoke furniture in Guinea: from the first sketch to installation in your home, with exacting finishes and clear guidance at every step.",
+    "historyTitle": "Our story",
+    "historyP1": "ARREDA was founded in 2024 with a simple idea: to deliver durable, well-crafted interiors suited to the climate and how people live here, without relying on imported catalogues alone. We bring together joiners, designers and installation teams for residential and commercial projects in Conakry and across the country.",
+    "historyP2": "Every project is a chance to combine Italian-inspired aesthetics (our design DNA), carefully chosen materials and artisanal know-how. Our goal: a result that lasts, is easy to live with day to day, and matches what you had in mind.",
+    "historyHighlight": "What sets us apart: local manufacturing, transparency on timelines, and a close relationship with our clients — before, during and after delivery.",
+    "historyBullets": [
+      "Detailed quotes and advice to prioritise line items within your budget.",
+      "Timber and laminates suited to humidity and use (kitchen, bathroom, office).",
+      "Site follow-up and delivery on the commitments we make."
+    ],
+    "historyImageAlt": "ARREDA workshop and craftsmanship",
+    "missionVisionTitle": "Mission & vision",
+    "missionTitle": "Mission",
+    "missionP1": "To design and build bespoke furniture that improves daily life for families and businesses in Guinea, with an end-to-end service: surveying, manufacturing, delivery and installation.",
+    "missionP2": "We want bespoke work to be accessible without compromising quality — through local organisation and clear processes.",
+    "visionTitle": "Vision",
+    "visionP1": "To become a reference in West Africa for demanding artisan interior fit-out, recognised for reliable deliveries and refined finishes.",
+    "visionP2": "In the long term, to extend “made in Guinea” expertise by working with architects, developers and brands that share our standards.",
+    "expertiseTitle": "Our expertise",
+    "expertiseLead": "Four pillars that structure every collaboration with ARREDA.",
+    "expertise": [
+      {
+        "title": "Bespoke design",
+        "text": "Site surveys, plans and volume choices tailored to your room, how you live and your budget."
+      },
+      {
+        "title": "Workshop production",
+        "text": "Cutting, assembly and finishing in our Conakry workshop: quality checks at every stage."
+      },
+      {
+        "title": "Delivery & installation",
+        "text": "Careful transport and on-site fitting by our teams for a result that matches what was approved."
+      },
+      {
+        "title": "Residential & commercial",
+        "text": "Homes, apartments, offices and retail: fixed or modular furniture, from wardrobes to fitted kitchens."
+      }
+    ],
+    "journeyTitle": "Your project in four steps",
+    "journey": [
+      {
+        "n": "01",
+        "title": "Discussion & visit",
+        "desc": "Understanding your needs, material advice and a technical visit when required."
+      },
+      {
+        "n": "02",
+        "title": "Proposal",
+        "desc": "Estimate, indicative schedule and plan approval before production starts."
+      },
+      {
+        "n": "03",
+        "title": "Production",
+        "desc": "Manufacturing in our workshops with progress updates on the most complex projects."
+      },
+      {
+        "n": "04",
+        "title": "Delivery",
+        "desc": "Installation, adjustments and handover of work ready to use."
+      }
+    ],
+    "prideTitle": "Guinean pride",
+    "prideP1": "Our colours, our neighbourhoods and on-the-ground realities guide our technical and aesthetic choices. ARREDA is proud to manufacture in Conakry for families and businesses across the country, and for partners investing in West Africa.",
+    "prideP2": "The Guinean flag reflects our local roots; our “Italian” style stands for clean lines and meticulous finishes.",
+    "ctaProjects": "See our projects",
+    "personnel": {
+      "title": "Our team",
+      "lead": "At ARREDA, leadership, design, finance and logistics work hand in hand at every stage of your bespoke projects. A structured, expert team supports you from initial brief through to delivery, ensuring quality, timelines and peace of mind throughout your build.",
+      "roles": {
+        "gerant-associe": "Managing partner",
+        "gerant-manager": "Manager",
+        "responsable-admin-financier": "Administrative & financial manager",
+        "architecte": "Architect",
+        "charge-logistique": "Logistics officer"
+      },
+      "prev": "Previous photo",
+      "next": "Next photo",
+      "counter": "{current} / {total}",
+      "goTo": "Show role: {role}",
+      "carouselLabel": "ARREDA team carousel",
+      "pausedHint": "slideshow paused"
+    }
   },
   "servicesPage": {
     "waQuote": "Hello ARREDA, I would like a quote for: {title}.",
