@@ -30,7 +30,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45 }}
-              className="block text-4xl sm:text-6xl lg:text-[4.25rem]"
+              className="block text-3xl xs:text-4xl sm:text-6xl lg:text-[4.25rem]"
             >
               {h.line1}
             </motion.span>

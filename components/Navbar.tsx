@@ -33,12 +33,12 @@ function LanguageSwitch({ locale, messages }: { locale: Locale; messages: Messag
     <div
       role="group"
       aria-label={messages.lang.groupLabel}
-      className="flex shrink-0 items-center gap-1 rounded-md border border-black/10 bg-white/80 p-0.5 text-xs font-heading font-bold uppercase tracking-wide"
+      className="flex shrink-0 items-center gap-0.5 rounded-md border border-black/10 bg-white/80 p-0.5 text-[10px] font-heading font-bold uppercase tracking-wide sm:gap-1 sm:text-xs"
     >
       <Link
         href={localizedPath("fr", pathForLocale)}
         className={cn(
-          "rounded px-2 py-1 transition-colors",
+          "rounded px-1.5 py-0.5 transition-colors sm:px-2 sm:py-1",
           locale === "fr" ? "bg-brand-black text-white" : "text-brand-black hover:text-brand-black/70"
         )}
         aria-current={locale === "fr" ? "true" : undefined}
@@ -48,7 +48,7 @@ function LanguageSwitch({ locale, messages }: { locale: Locale; messages: Messag
       <Link
         href={localizedPath("en", pathForLocale)}
         className={cn(
-          "rounded px-2 py-1 transition-colors",
+          "rounded px-1.5 py-0.5 transition-colors sm:px-2 sm:py-1",
           locale === "en" ? "bg-brand-black text-white" : "text-brand-black hover:text-brand-black/70"
         )}
         aria-current={locale === "en" ? "true" : undefined}
@@ -78,14 +78,14 @@ export function Navbar({ locale, messages }: Props) {
   return (
     <>
       <header className="sticky top-0 z-[110] border-b-2 border-brand-red bg-white/90 backdrop-blur-md">
-        <div className="mx-auto flex h-16 max-w-7xl items-center gap-2 px-4 sm:gap-3">
-          <Link href={localizedPath(locale, "/")} className="flex min-w-0 shrink-0 items-center gap-2">
+        <div className="mx-auto flex h-14 max-w-7xl items-center gap-2 px-3 sm:h-16 sm:gap-3 sm:px-4">
+          <Link href={localizedPath(locale, "/")} className="flex min-w-0 shrink items-center gap-2">
             <Image
               src="/logo/ARREDA.png"
               alt="ARREDA"
               width={849}
               height={280}
-              className="h-14 w-auto"
+              className="h-9 w-auto max-w-[min(42vw,9.5rem)] sm:h-11 sm:max-w-none lg:h-14"
               priority
             />
           </Link>
@@ -113,24 +113,8 @@ export function Navbar({ locale, messages }: Props) {
 
           <div className="flex flex-1 justify-end xl:flex-none" />
 
-          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-            <Link
-              href={devisHref}
-              className={cn(
-                devisButtonClass,
-                "hidden max-w-[10rem] truncate text-xs sm:max-w-[12rem] sm:text-sm lg:inline-flex lg:max-w-none lg:text-base"
-              )}
-            >
-              {n.quote}
-            </Link>
-
-            <Link
-              href={devisHref}
-              className={cn(
-                buttonVariants({ size: "sm" }),
-                "inline-flex max-w-[9rem] truncate border-0 bg-brand-black px-2 py-2 font-heading text-[10px] font-semibold uppercase leading-tight text-white hover:bg-black/85 sm:max-w-[11rem] sm:text-xs lg:hidden"
-              )}
-            >
+          <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
+            <Link href={devisHref} className={cn(devisButtonClass, "hidden xl:inline-flex")}>
               {n.quote}
             </Link>
 
@@ -138,7 +122,7 @@ export function Navbar({ locale, messages }: Props) {
 
             <button
               type="button"
-              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-brand-red/20 text-brand-black lg:hidden"
+              className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-brand-red/20 text-brand-black xl:hidden sm:h-10 sm:w-10"
               aria-label={open ? n.menuClose : n.menuOpen}
               onClick={() => setOpen((v) => !v)}
             >
@@ -155,7 +139,7 @@ export function Navbar({ locale, messages }: Props) {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", stiffness: 260, damping: 28 }}
-            className="fixed inset-0 z-[9998] bg-white lg:hidden"
+            className="fixed inset-0 z-[9998] bg-white xl:hidden"
           >
             <div className="flex h-16 items-center justify-end border-b-2 border-brand-red px-4">
               <button

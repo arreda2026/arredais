@@ -52,7 +52,7 @@ export default async function RootLayout({
 
   return (
     <html lang={htmlLang} className="font-body" suppressHydrationWarning>
-      <body className="min-h-screen bg-brand-white text-brand-black antialiased">
+      <body className="min-h-screen overflow-x-hidden bg-brand-white text-brand-black antialiased">
         <JsonLd />
         <Analytics />
         {children}
