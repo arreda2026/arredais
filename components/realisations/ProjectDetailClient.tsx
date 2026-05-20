@@ -213,7 +213,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
         <section className="mx-auto mt-16 max-w-7xl px-4">
           <h2 className="font-display text-3xl uppercase text-brand-black">{pp.similarTitle}</h2>
           <RedAccentLine />
-          <div className="mt-8 grid gap-8 md:grid-cols-3">
+          <div className="mt-8 grid gap-8 sm:grid-cols-2 md:grid-cols-3">
             {similar.map((p) => (
               <RealisationGridCard key={p.slug} project={p} />
             ))}

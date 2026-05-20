@@ -9,7 +9,7 @@ export const unsplash = {
 
 export const stats = [
   { value: 200, suffix: "+", label: "Projets réalisés" },
-  { value: 8, suffix: " ans", label: "D'expérience" },
+  { value: 2, suffix: " ans", label: "D'expérience" },
   { value: 500, suffix: "m²", label: "Atelier de production" },
   { value: 100, suffix: "%", label: "Fabrication locale" },
 ] as const;

@@ -27,7 +27,7 @@
     "follow": "Social",
     "legal": "Legal notice & privacy policy (to be completed).",
     "copyright": "All rights reserved.",
-    "copyrightMain": "© {year} ARREDA — All rights reserved | Made with ❤️ in Conakry, Guinea"
+    "copyrightMain": "© {year} ARREDA — All rights reserved"
   },
   "lang": {
     "fr": "FR",
@@ -164,7 +164,7 @@
         "label": "Projects delivered"
       },
       {
-        "value": 8,
+        "value": 2,
         "suffix": " yrs",
         "label": "Experience"
       },

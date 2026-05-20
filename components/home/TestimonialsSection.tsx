@@ -22,7 +22,7 @@ export function TestimonialsSection() {
           <RedAccentLine />
         </motion.div>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
           {testimonials.map((t, i) => (
             <motion.blockquote
               key={t.name}

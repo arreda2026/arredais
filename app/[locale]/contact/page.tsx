@@ -89,7 +89,7 @@ export default function ContactPage() {
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2102.713803265612!2d-13.600663054275838!3d9.59740799942655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xf1cd50029bad9ef%3A0x8bf8a987c24cb016!2sUsine%20de%20Arreda%20Italian%20Style!5e0!3m2!1sfr!2s!4v1776525768966!5m2!1sfr!2s"
                 width="100%"
                 height={450}
-                className="min-h-[280px] w-full max-w-full"
+                className="h-[280px] w-full max-w-full sm:h-[360px] md:h-[450px]"
                 style={{ border: 0 }}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

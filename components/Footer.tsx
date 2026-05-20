@@ -107,7 +107,7 @@ export function Footer({ locale, messages }: FooterProps) {
             </h3>
             <div className="mt-4 flex gap-3">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61571500554920"
                 aria-label="Facebook"
                 className="rounded-full border border-white/20 p-2 hover:border-white/50 hover:text-white/90"
               >

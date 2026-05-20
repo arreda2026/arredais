@@ -27,7 +27,7 @@
     "follow": "Réseaux",
     "legal": "Mentions légales & politique de confidentialité (à compléter).",
     "copyright": "Tous droits réservés.",
-    "copyrightMain": "© {year} ARREDA — Tous droits réservés | Fait avec ❤️ à Conakry, Guinée"
+    "copyrightMain": "© {year} ARREDA — Tous droits réservés"
   },
   "lang": {
     "fr": "FR",
@@ -164,7 +164,7 @@
         "label": "Projets réalisés"
       },
       {
-        "value": 8,
+        "value": 2,
         "suffix": " ans",
         "label": "D'expérience"
       },

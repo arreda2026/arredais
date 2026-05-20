@@ -248,7 +248,7 @@ export function PartenairesClient() {
       </section>
 
       <section className="px-4 py-14">
-        <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl gap-6 sm:grid-cols-2 md:grid-cols-3">
           {t.needs.map((n) => (
             <div
               key={n.title}
