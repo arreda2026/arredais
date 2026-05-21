@@ -50,15 +50,11 @@ function localGalleryFiles(slug: string, files: readonly string[]): Photo[] {
 }
 
 const KANKAN_FILES = [
-  "001.jpeg",
   "002.jpeg",
   "003.jpeg",
   "004.jpeg",
-  "005.jpeg",
-  "006.jpeg",
   "007.jpeg",
   "008.jpeg",
-  "009.jpeg",
   "010.jpeg",
   "011.jpeg",
   "012.jpeg",
@@ -68,12 +64,8 @@ const KANKAN_FILES = [
   "016.jpeg",
   "017.jpeg",
   "018.jpeg",
-  "019.jpeg",
   "020.jpeg",
   "021.jpeg",
-  "022.jpeg",
-  "023.jpeg",
-  "024.jpeg",
   "025.jpeg",
   "026.jpeg",
   "027.jpeg",
@@ -86,23 +78,15 @@ const KANKAN_FILES = [
   "034.jpeg",
   "035.jpeg",
   "036.jpeg",
-  "037.jpeg",
-  "038.jpeg",
   "039.jpeg",
   "040.jpeg",
-  "041.jpeg",
-  "042.jpeg",
   "043.jpeg",
   "044.jpeg",
-  "045.jpeg",
   "046.jpeg",
-  "047.jpeg",
   "048.jpeg",
-  "049.jpeg",
   "050.jpeg",
   "051.jpeg",
   "052.jpeg",
-  "053.jpeg",
 ] as const;
 
 const MAFEREA_FILES = [
@@ -132,9 +116,7 @@ const MAFEREA_FILES = [
 ] as const;
 
 const BILLY_CONDE_FILES = [
-  "001.jpeg",
   "002.jpeg",
-  "003.jpeg",
   "004.jpeg",
   "005.jpeg",
   "006.jpeg",
@@ -143,21 +125,14 @@ const BILLY_CONDE_FILES = [
   "009.jpeg",
   "010.jpeg",
   "011.jpeg",
-  "012.jpeg",
   "013.jpeg",
   "014.jpeg",
   "015.jpeg",
-  "016.jpeg",
   "017.jpeg",
   "018.jpeg",
   "019.jpeg",
   "020.jpeg",
   "021.jpeg",
-  "022.jpeg",
-  "023.jpeg",
-  "024.jpeg",
-  "025.jpeg",
-  "026.jpeg",
   "027.jpeg",
   "028.jpeg",
   "029.jpeg",
@@ -185,10 +160,6 @@ const YIMBAYA_FILES = [
 const CAMAYENNE_FILES = [
   "001.jpeg",
   "002.jpeg",
-  "003.jpeg",
-  "004.jpeg",
-  "005.jpeg",
-  "006.jpeg",
 ] as const;
 
 const localRealisationProjects: Project[] = [
@@ -200,8 +171,8 @@ const localRealisationProjects: Project[] = [
     clientType: "Particulier",
     duration: "Sur mesure",
     year: "2026",
-    coverBefore: localCover("kankan", 22),
-    coverAfter: localCover("kankan", 22),
+    coverBefore: localCover("kankan", 2),
+    coverAfter: localCover("kankan", 2),
     description:
       "Mobilier et aménagement livrés sur site : galerie photo après réalisation (aucun cliché « avant » disponible).",
     tags: ["Résidentiel", "Sur mesure"],
@@ -315,8 +286,8 @@ const localRealisationProjects: Project[] = [
     clientType: "Particulier",
     duration: "Sur mesure",
     year: "2026",
-    coverBefore: localCover("camayenne", 4),
-    coverAfter: localCover("camayenne", 4),
+    coverBefore: localCover("camayenne", 1),
+    coverAfter: localCover("camayenne", 1),
     description:
       "Aménagement livré : photos prises après la pose (inclut des clichés d’archives regroupés ici).",
     tags: ["Conakry", "Sur mesure"],

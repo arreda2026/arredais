@@ -60,7 +60,7 @@ export default function ContactPage() {
             />
             <div className="flex gap-3 pt-2">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61565889586101"
                 className="rounded-full border border-black/10 px-4 py-2 text-sm font-heading font-semibold uppercase hover:border-brand-black"
               >
                 Facebook

@@ -26,7 +26,7 @@ const copy = {
       "Fabrication locale, croissance démographique et besoin d’équipements : l’Afrique de l’Ouest offre un terrain solide pour des partenariats durables.",
     metrics: [
       { k: "2024", v: "Création à Conakry" },
-      { k: "500m²", v: "Atelier équipé" },
+      { k: "3000m²", v: "Atelier équipé" },
       { k: "200+", v: "Projets livrés" },
       { k: "100%", v: "Fabrication locale" },
     ],
@@ -77,7 +77,7 @@ const copy = {
       "Local manufacturing, demographic growth and equipment needs make West Africa a strong foundation for long-term partnerships.",
     metrics: [
       { k: "2024", v: "Founded in Conakry" },
-      { k: "500m²", v: "Equipped workshop" },
+      { k: "3000m²", v: "Equipped workshop" },
       { k: "200+", v: "Delivered projects" },
       { k: "100%", v: "Local manufacturing" },
     ],
