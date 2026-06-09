@@ -8,19 +8,19 @@ export type PersonnelMember = {
 };
 
 export const personnelMembers: readonly PersonnelMember[] = [
-  { id: "gerant-manager",              file: "gerant manager.jpeg" },
-  { id: "gerant-associe",              file: "Gérant associé.jpeg" },
-  { id: "responsable-admin-financier", file: "responsable administratif et financier.jpeg" },
-  { id: "architecte",                  file: "aechitecte.jpeg" },
-  { id: "superviseur-usine",           file: "Mohamed camara superviseur d'usine.jpeg" },
-  { id: "assistante-administrative",   file: "Maimouna Sow Assistante administrative.jpeg" },
-  { id: "charge-logistique",           file: "chargé logistique.jpeg" },
-  { id: "menuisier-alya",              file: "Alya Soumah menusier.jpeg" },
-  { id: "menuisier-antony",            file: "Antony Kita Camara menusier.jpeg" },
-  { id: "menuisier-djanko",            file: "Djanko Mara menusier.jpeg" },
-  { id: "menuisier-fode",              file: "Fodé Abou Soumah Menusier.jpeg" },
-  { id: "menuisier-mohamed-sylla",     file: "Mohamed sylla menusier.jpeg" },
-  { id: "menuisier-saa",               file: "Saa Julien Kamano menusier.jpeg" },
+  { id: "gerant-manager",              file: "gerant manager.webp" },
+  { id: "gerant-associe",              file: "Gérant associé.webp" },
+  { id: "responsable-admin-financier", file: "responsable administratif et financier.webp" },
+  { id: "architecte",                  file: "aechitecte.webp" },
+  { id: "superviseur-usine",           file: "Mohamed camara superviseur d'usine.webp" },
+  { id: "assistante-administrative",   file: "Maimouna Sow Assistante administrative.webp" },
+  { id: "charge-logistique",           file: "chargé logistique.webp" },
+  { id: "menuisier-alya",              file: "Alya Soumah menusier.webp" },
+  { id: "menuisier-antony",            file: "Antony Kita Camara menusier.webp" },
+  { id: "menuisier-djanko",            file: "Djanko Mara menusier.webp" },
+  { id: "menuisier-fode",              file: "Fodé Abou Soumah Menusier.webp" },
+  { id: "menuisier-mohamed-sylla",     file: "Mohamed sylla menusier.webp" },
+  { id: "menuisier-saa",               file: "Saa Julien Kamano menusier.webp" },
 ] as const;
 
 export function personnelImageUrl(file: string): string {
