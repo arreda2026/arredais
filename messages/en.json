@@ -255,11 +255,19 @@
       "title": "Our team",
       "lead": "At ARREDA, leadership, design, finance and logistics work hand in hand at every stage of your bespoke projects. A structured, expert team supports you from initial brief through to delivery, ensuring quality, timelines and peace of mind throughout your build.",
       "roles": {
-        "gerant-associe": "Managing partner",
         "gerant-manager": "Manager",
+        "gerant-associe": "Managing partner",
         "responsable-admin-financier": "Administrative & financial manager",
         "architecte": "Architect",
-        "charge-logistique": "Logistics officer"
+        "superviseur-usine": "Factory supervisor",
+        "assistante-administrative": "Administrative assistant",
+        "charge-logistique": "Logistics officer",
+        "menuisier-alya": "Carpenter",
+        "menuisier-antony": "Carpenter",
+        "menuisier-djanko": "Carpenter",
+        "menuisier-fode": "Carpenter",
+        "menuisier-mohamed-sylla": "Carpenter",
+        "menuisier-saa": "Carpenter"
       },
       "prev": "Previous photo",
       "next": "Next photo",

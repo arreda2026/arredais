@@ -187,7 +187,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
 
       <div className="mx-auto max-w-7xl space-y-20 px-4 py-14">
         {rooms.map((room) => (
-          <RoomSection key={room.id} room={room} projectTitle={project.title} />
+          <RoomSection key={room.id} room={room} projectTitle={project.title} photosNote={project.photosNote} />
         ))}
       </div>
 
@@ -224,7 +224,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
   );
 }
 
-function RoomSection({ room, projectTitle }: { room: Room; projectTitle: string }) {
+function RoomSection({ room, projectTitle, photosNote }: { room: Room; projectTitle: string; photosNote?: string }) {
   const pp = useMessages().projectPage;
   const [mode, setMode] = useState<ViewMode>("compare");
   const [bi, setBi] = useState(0);
@@ -294,7 +294,7 @@ function RoomSection({ room, projectTitle }: { room: Room; projectTitle: string 
             </span>
             {room.name}
           </h2>
-          <p className="text-sm text-brand-muted">{pp.photosNote}</p>
+          <p className="text-sm text-brand-muted">{photosNote ?? pp.photosNote}</p>
         </div>
         <LightboxGallery
           images={room.after.map((ph) => ph.url)}

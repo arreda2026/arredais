@@ -14,7 +14,7 @@ function useInView<T extends HTMLElement>(options?: IntersectionObserverInit) {
       ([e]) => {
         if (e?.isIntersecting) setInView(true);
       },
-      { threshold: 0.35, ...options }
+      { threshold: 0.1, ...options }
     );
     obs.observe(el);
     return () => obs.disconnect();

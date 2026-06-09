@@ -31,6 +31,7 @@ export type Project = {
   rooms: Room[];
   description: string;
   tags: string[];
+  photosNote?: string;
 };
 
 /** Couverture : fichier 00X dans le dossier (doit exister dans la liste galerie). */
@@ -50,11 +51,13 @@ function localGalleryFiles(slug: string, files: readonly string[]): Photo[] {
 }
 
 const KANKAN_FILES = [
-  "002.jpeg",
+  "001.jpeg",
   "003.jpeg",
-  "004.jpeg",
+  "005.jpeg",
+  "006.jpeg",
   "007.jpeg",
   "008.jpeg",
+  "009.jpeg",
   "010.jpeg",
   "011.jpeg",
   "012.jpeg",
@@ -64,8 +67,11 @@ const KANKAN_FILES = [
   "016.jpeg",
   "017.jpeg",
   "018.jpeg",
-  "020.jpeg",
+  "019.jpeg",
   "021.jpeg",
+  "022.jpeg",
+  "023.jpeg",
+  "024.jpeg",
   "025.jpeg",
   "026.jpeg",
   "027.jpeg",
@@ -78,15 +84,15 @@ const KANKAN_FILES = [
   "034.jpeg",
   "035.jpeg",
   "036.jpeg",
+  "038.jpeg",
   "039.jpeg",
   "040.jpeg",
+  "041.jpeg",
+  "042.jpeg",
   "043.jpeg",
   "044.jpeg",
+  "045.jpeg",
   "046.jpeg",
-  "048.jpeg",
-  "050.jpeg",
-  "051.jpeg",
-  "052.jpeg",
 ] as const;
 
 const MAFEREA_FILES = [
@@ -171,10 +177,10 @@ const localRealisationProjects: Project[] = [
     clientType: "Particulier",
     duration: "Sur mesure",
     year: "2026",
-    coverBefore: localCover("kankan", 2),
-    coverAfter: localCover("kankan", 2),
+    coverBefore: localCover("kankan", 1),
+    coverAfter: localCover("kankan", 1),
     description:
-      "Mobilier et aménagement livrés sur site : galerie photo après réalisation (aucun cliché « avant » disponible).",
+      "Mobilier et aménagement livrés sur site.",
     tags: ["Résidentiel", "Sur mesure"],
     rooms: [
       {
@@ -244,6 +250,7 @@ const localRealisationProjects: Project[] = [
     coverAfter: localCover("residence-2000", 8),
     description:
       "Projet résidentiel : finitions et mobilier ARREDA. Galerie après livraison.",
+    photosNote: "Clichés pris pendant et après la livraison du chantier.",
     tags: ["Résidence", "Sur mesure"],
     rooms: [
       {
