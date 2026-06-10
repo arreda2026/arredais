@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { RedAccentLine } from "@/components/RedAccentLine";
 import { CornerMark } from "@/components/CornerMark";
@@ -11,8 +12,19 @@ export function ServicesSection() {
   const services = messages.home.services;
 
   return (
-    <section className="bg-brand-white py-16">
-      <div className="mx-auto max-w-7xl px-4">
+    <section className="relative overflow-hidden bg-brand-white py-16">
+      {/* Logo filigrane */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <Image
+          src="/logo/ARREDA.png"
+          alt=""
+          aria-hidden
+          width={849}
+          height={280}
+          className="w-[70%] max-w-2xl opacity-[0.04] grayscale select-none"
+        />
+      </div>
+      <div className="relative mx-auto max-w-7xl px-4">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -47,5 +59,6 @@ export function ServicesSection() {
         </div>
       </div>
     </section>
+
   );
 }
