@@ -14,6 +14,7 @@ export const personnelMembers: readonly PersonnelMember[] = [
   { id: "architecte",                  file: "aechitecte.webp" },
   { id: "superviseur-usine",           file: "Mohamed camara superviseur d'usine.webp" },
   { id: "assistante-administrative",   file: "Maimouna Sow Assistante administrative.webp" },
+  { id: "chargee-commerciale",          file: "Bintou Camara chargée commerciale.webp" },
   { id: "charge-logistique",           file: "chargé logistique.webp" },
   { id: "menuisier-alya",              file: "Alya Soumah menusier.webp" },
   { id: "menuisier-antony",            file: "Antony Kita Camara menusier.webp" },
